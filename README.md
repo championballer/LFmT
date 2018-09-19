@@ -13,3 +13,6 @@ Repository includes all code written while picking up JAVA syntax.We start witho
     The printf method is a formatted string method and takes the formatted string as the first parameter and then the placeholder values.
 
 *We have access to a global **System** object, using which we access exit method. If we exit with 0, that means we were in control of the exit system, else we weren't.*
+   ```java
+   System.exit(0);
+   ```
