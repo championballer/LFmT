@@ -16,3 +16,28 @@ Repository includes all code written while picking up JAVA syntax.We start witho
    ```java
    System.exit(0);
    ```
+
+2. The primitive variables(**8**) in java are:
+
+  ```java
+  int
+  char
+  boolean
+  double
+  float
+  long
+  short
+  byte
+  ```
+  
+3. To parse integer input from readLine method we need to parse the string as an integer and we have a method for this.
+
+  ```java
+  Integer.parseInt(str);
+  ```
+  
+    Here Integer is a new object class called a wrapper class and are available for all primitive types.
+
+4. The strings have methods such as equals and equalsIgnoreCase to compare strings. equalsIgnoreCase ignores typecasing and equates for letter to letter.
+
+5. The logical operator rules and looping rules are the same as present in other common languages.
