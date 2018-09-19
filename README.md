@@ -1,6 +1,6 @@
 # java
 
-Repository includes all code written while picking up JAVA syntax.We start without any IDE, and rather take an independent approach about learning java, that is by employing the terminal to compile and run java files atleast in the beginning.
+Repository includes all code written while picking up JAVA syntax.We start without any IDE, and rather take an independent approach about learning java, that is by employing the terminal to compile and run java files atleast in the beginning. jshell is also used here at some places and in is the repl(**read, eval,print,loop**) introduced in JAVA 9.
 
 1. To work with i/o, we import **java.io.Console.** Then,
   
@@ -41,3 +41,5 @@ Repository includes all code written while picking up JAVA syntax.We start witho
 4. The strings have methods such as equals and equalsIgnoreCase to compare strings. equalsIgnoreCase ignores typecasing and equates for letter to letter.
 
 5. The logical operator rules and looping rules are the same as present in other common languages.
+
+6. Objects in JAVA 
