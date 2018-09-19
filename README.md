@@ -10,5 +10,4 @@ Repository includes all code written while picking up JAVA syntax.We start witho
   String variable = console.readLine("");
   
   ```
-  
-    The printf method is a formatted string method and takes the formatted string as the first parameter and then the           placeholder values.
+    The printf method is a formatted string method and takes the formatted string as the first parameter and then the placeholder values.
