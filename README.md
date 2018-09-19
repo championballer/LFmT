@@ -7,6 +7,6 @@ Repository includes all code written while picking up JAVA syntax.We start witho
   ```java
   Console console = System.console();
   console.printf("%s",variable);
-  String variable = console.readLine();
+  String variable = console.readLine("");
   
   ```
