@@ -1,31 +1,44 @@
 import java.util.Scanner;
 
-class Prompter {
-  private Game game;
-  
-  public Prompter(Game game) {
-    this.game = game;
-  }
-  
-  public boolean promptForGuess() {
-    Scanner scanner = new Scanner(System.in);
-    System.out.print("Enter a letter:  ");
-    String guessInput = scanner.nextLine();
-    char guess = guessInput.charAt(0);
-    try{
-      boolean ans =  game.applyGuess(guess);
-      return ans;
-    }catch(IllegalArgumentException iae){
-      System.out.println(iae.getMessage());
-      return true;
-    }
-  }
-  
-  public void displayProgress() {
-    System.out.printf("You have %d tries left to solve:  %s%n",
-                      game.getRemainingTries(),
-                      game.getCurrentProgress());
-    
-  }
-  
+public class Prompter{
+	private Game game;
+
+	public Prompter(Game game)
+	{
+		this.game = game; 
+	}
+
+	public void promptForGuess()
+	{
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Please enter guess:");
+		String guessInput = scanner.nextLine();
+
+		try{
+			game.applyGuess(guessInput);
+
+		}catch(IllegalArgumentException iae){
+			System.out.println(iae.getMessage());
+		}
+	}
+
+	public void displayProgress()
+	{
+		System.out.println("You have "+game.triesLeft()+" tries left");
+		System.out.println(game.getProgress());
+	}
+
+	public void displayResult()
+	{
+		if(game.isWon())
+		{
+			System.out.println("You won");
+		}
+
+		else
+		{
+			System.out.println("Sorry, you lost");
+		}
+	}
+
 }
