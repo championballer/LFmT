@@ -85,4 +85,15 @@ Then,
   }
   ```
   
-10. There are some frequently used String methods i.e. **indexOf({*char to search*})**, **charAt({*index to search at*})**, **toCharArray({*String*})**. 
+10. There are some frequently used String methods i.e. **indexOf({*char to search*})**, **charAt({*index to search at*})**, **toCharArray({*String*})**, **length()**.
+
+11. *In java objects are passed by reference but the reference are passed by value.*
+  ```
+  For example the game object in Hangman, we passed it through both the Hangman class and the Prompt class, but both referred to the same object
+  ```
+12. The command line can be used for taking in arguments to the main method of the class called. These arguments are in the form of a string array. 
+  ```java
+  String[] args;
+ ```
+    *The above can be seen as the syntax for arrays in java*
+  
