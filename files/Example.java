@@ -7,6 +7,7 @@ public class Example {
 		System.out.println("Hello world");
 		Console console = System.console();
 		String characterName = console.readLine();
+		console.printf("%d%n",PezDispenser.MAX_PEZ);
 		PezDispenser d = new PezDispenser(characterName);
 
 		System.out.println(d.getCharacterName());
