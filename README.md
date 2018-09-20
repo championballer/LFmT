@@ -59,3 +59,19 @@ Repository includes all code written while picking up JAVA syntax.We start witho
 8. Function overloading is similar to as seen before. 
 
 9. Exceptions: try and catch blocks are employed for this. Example is of IllegalArgumentException. We place a condition to throw a certain exception and then in our user class we employ a try block, in which if the code throws the exception then we can place a catch phrase to execute code if that is encountered.
+
+  ```java
+  
+  //in object file
+  if(newAmount>MAX_PEZ)
+  {
+    throw IllegalArgumentException("exceedslimits");
+  }
+  
+  //in user class
+  try{
+    dispenser.flll(20);
+  }catch(IllegalArgumentException iae){
+    System.out.println(iae.getMessage());
+  }
+  
