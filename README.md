@@ -31,7 +31,7 @@ Repository includes all code written while picking up JAVA syntax.We start witho
   byte
   ```
   
-3. To parse integer input from readLine method we need to parse the string as an integer and we have a method for this.
+3. To parse integer input from readLine method we need to parse the string as an integer and we have a method for this. This method is a *static method*.
 
   ```java
   Integer.parseInt(str);
@@ -43,4 +43,19 @@ Repository includes all code written while picking up JAVA syntax.We start witho
 
 5. The logical operator rules and looping rules are the same as present in other common languages.
 
-6. Objects in JAVA 
+6. Objects and Classes in JAVA, 
+  
+    Blueprints : Classes
+    Instances of these blueprints : Objects
+    
+    Class is made using **class** keyword and can include members and methods analogous to abilities and verbs associated to any object. We use access level specifiers while working with classes which include public, protected and private. In case of no modifiers, the files are available in the same package(*same directory*) to each other. Only private hides members and methods in the same package. 
+    
+    Getters,Setters, Constructors work as usual. *this* keyword also has similar functioning. 
+    
+    *final* keyword(analogous to const in C++) allows only once initialisation of the object. *static* keyword allows us to define class-wide properties and they can be accessed using the class and require no object or instance to be referred to.
+
+7. When we run (class) file after javac compilation, then it looks for a public static method called main to run and accordingly we are set. We also have string[] args that we can use to accept arguments from command line to our program.
+
+8. Function overloading is similar to as seen before. 
+
+9. Exceptions: try and catch blocks are employed for this. Example is of IllegalArgumentException. We place a condition to throw a certain exception and then in our user class we employ a try block, in which if the code throws the exception then we can place a catch phrase to execute code if that is encountered.
