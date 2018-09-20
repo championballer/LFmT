@@ -2,7 +2,11 @@
 
 Repository includes all code written while picking up JAVA syntax.We start without any IDE, and rather take an independent approach about learning java, that is by employing the terminal to compile and run java files atleast in the beginning. jshell is also used here at some places and in is the repl(**read, eval,print,loop**) introduced in JAVA 9.
 
-1. To work with i/o, we import **java.io.Console.** Console is a wrapper class over System object to handle i/o. There are other ways also available to take i/o. Then,
+1. To work with i/o, we import **java.io.Console.** Console is a wrapper class over System object to handle i/o. There are other ways also available to take i/o. We can use the Scanner class also to take in input which is present in **java.util package** and needs to be imported in each file where there is a use case. The import statement is as follows:
+  ```java
+    import java.util.Scanner;
+  ```
+Then,
   
   ```java
   System.out.println("");
@@ -10,8 +14,10 @@ Repository includes all code written while picking up JAVA syntax.We start witho
   console.printf("%s",variable);
   String variable = console.readLine("");
   
+  Scanner scanner = new Scanner(System.in);
+  String variable2 = scanner.nextLine();
   ```
-    The printf method is a formatted string method and takes the formatted string as the first parameter and then the placeholder values.
+*The printf method is a formatted string method and takes the formatted string as the first parameter and then the placeholder values.*
 
 *We have access to a global **System** object, using which we access exit method. If we exit with 0, that means we were in control of the exit system, else we weren't.*
    ```java
@@ -41,7 +47,10 @@ Repository includes all code written while picking up JAVA syntax.We start witho
 
 4. The strings have methods such as equals and equalsIgnoreCase to compare strings. equalsIgnoreCase ignores typecasing and equates for letter to letter.
 
-5. The logical operator rules and looping rules are the same as present in other common languages.
+5. The logical operator rules and looping rules are the same as present in other common languages. Java has what we call enchanced for loop that loops over each object of some array and that needs to be stored in some variable that is local in scope to that loop.
+  ```java
+   for(char letter:example.toCharArray())
+  ```
 
 6. Objects and Classes in JAVA, 
   
@@ -74,4 +83,6 @@ Repository includes all code written while picking up JAVA syntax.We start witho
   }catch(IllegalArgumentException iae){
     System.out.println(iae.getMessage());
   }
+  ```
   
+10. There are some frequently used String methods i.e. **indexOf({*char to search*})**, **charAt({*index to search at*})**, **toCharArray({*String*})**. 
