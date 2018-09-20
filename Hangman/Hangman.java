@@ -1,10 +1,12 @@
-public class Hangman{
-	public static void main(String[] args)
-	{
-		System.out.println("Hello World");
+public class Hangman {
 
-		Game game = new Game("treehouse");
-
-		System.out.println(game.getAnswer());
-	}
+  public static void main(String[] args) {
+    // Your incredible code goes here...
+    Game game = new Game("treehouse");
+    Prompter prompter = new Prompter(game);
+    while (game.getRemainingTries() > 0) {
+      prompter.displayProgress();
+      prompter.promptForGuess();  
+    }
+  }
 }
