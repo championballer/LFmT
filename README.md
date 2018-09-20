@@ -2,9 +2,10 @@
 
 Repository includes all code written while picking up JAVA syntax.We start without any IDE, and rather take an independent approach about learning java, that is by employing the terminal to compile and run java files atleast in the beginning. jshell is also used here at some places and in is the repl(**read, eval,print,loop**) introduced in JAVA 9.
 
-1. To work with i/o, we import **java.io.Console.** Then,
+1. To work with i/o, we import **java.io.Console.** Console is a wrapper class over System object to handle i/o. There are other ways also available to take i/o. Then,
   
   ```java
+  System.out.println("");
   Console console = System.console();
   console.printf("%s",variable);
   String variable = console.readLine("");
