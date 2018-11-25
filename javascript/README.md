@@ -1,4 +1,4 @@
-Javascript
+# Javascript
 
 document.write(); : The exact html line to be added to the source file
 
