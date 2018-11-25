@@ -57,3 +57,11 @@ Array in js : var arr = []; Can be thought of as a list of items, simply. We can
 
 Accessing elements out of scope leads to return of undefined item. (Shoutout the difference between null and undefined) Mutable
 
+arr.length : array size
+arr.push(element) : can be used to append an element to the end of the array. Can be used to append many objects at once as well. For exam numbers.push(7,8,9)
+
+arr.unshift(element) : to add elements to the beginning of the array
+
+arr.shift(); - returns and removes the first element of the array
+arr.pop(); - returns and removes the last element of the array
+
