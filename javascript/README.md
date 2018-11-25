@@ -65,3 +65,6 @@ arr.unshift(element) : to add elements to the beginning of the array
 arr.shift(); - returns and removes the first element of the array
 arr.pop(); - returns and removes the last element of the array
 
+arr.join(delimiter) : joins the elements of the array separated by a delimiter such as ','.
+
+arr.concat(arr2) : to add all the elements of one list to another, and returns a new array
