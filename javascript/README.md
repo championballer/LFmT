@@ -121,5 +121,11 @@ const sayName = () => {
 
 There were majorly two ways to declare variables. One was function declaration and other was expression. Arrow is the third.
 
-Single argument arrow functions can be made very concise and can be used to clean up code as much as possible. If there is only one argument then paranthesis are not required. If there is only one line then return is not required. Even the curly braces can be removed in case of single line functions. 
+Single argument arrow functions can be made very concise and can be used to clean up code as much as possible. If there is only one argument then paranthesis are not required. If there is only one line then return is not required. Even the curly braces can be removed in case of single line functions.
+
+# DOM (Document Object Model)
+
+Three basic steps for adding interactivity on a webpage : 1. Selecting elements
+2. Manipulating elements and corresponding contents
+3. Listening for events on buttons and other actions on the webpages 
 
