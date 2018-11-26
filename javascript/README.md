@@ -115,3 +115,11 @@ Interpolation : using of placeholders at right points.
 
 Arrow function 
 
+const sayName = () => {
+	console.log("Arrow Function");
+}
+
+There were majorly two ways to declare variables. One was function declaration and other was expression. Arrow is the third.
+
+Single argument arrow functions can be made very concise and can be used to clean up code as much as possible. If there is only one argument then paranthesis are not required. If there is only one line then return is not required. Even the curly braces can be removed in case of single line functions. 
+
