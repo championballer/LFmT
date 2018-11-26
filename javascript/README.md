@@ -97,3 +97,10 @@ Javascript was first introduced in NetScape Navigator.
 ES Lint : Linter software
 
 # ES2015
+
+Other methods to create variables, const and let
+
+const pi = 3.14;
+let name = "Shiv";
+
+const protects from being completely overwritten. arrays can be pushed, popped to and similarly for objects. Let is similar to var but has block level scope. Let is important and should be used with good caution.
