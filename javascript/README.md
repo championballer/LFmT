@@ -104,3 +104,14 @@ const pi = 3.14;
 let name = "Shiv";
 
 const protects from being completely overwritten. arrays can be pushed, popped to and similarly for objects. Let is similar to var but has block level scope. Let is important and should be used with good caution.
+
+Use of var should be avoided because of scope issues.
+
+Template literal is handled using "``". To move onto next line in normal strings, we need to use + and other things. And "" also had to be taken proper care while adding bits of tags etc. All of these does not need to be taken care of in ES6.
+
+Interpolation : using of placeholders at right points.
+
+'Hello, ${name}, nice to see' : No need to use + again and along with taking care of "" symbols at the right point.
+
+Arrow function 
+
