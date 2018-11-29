@@ -129,3 +129,30 @@ Three basic steps for adding interactivity on a webpage : 1. Selecting elements
 2. Manipulating elements and corresponding contents
 3. Listening for events on buttons and other actions on the webpages 
 
+DOM gives a structure to the html document that can be exploited by javascript to make the webpage more dynamic and interactive. It can be thought of as a model which allows you to get around different elements in a webpage, like a map helps us to get around different places, the major differnce being that the changes we make via DOM are very much real, like if we were to make a street in a map, it were to become real in the real world.
+
+DOM provides the webpage a tree like structure, where the document object can be thought of as the root node. 
+
+<insert picture>
+
+Sample of selecting element 
+
+const heading = document.getElementById('myHeading');
+
+For event listener, we need to pass the event and the corresponding action function when the event occurs. Also here when we use const, that doesn't mean that we can not change its underlying properties or use its method functions, what it really means is that it can't be reassigned.
+
+heading.addEventListener('click',()=>{
+	myHeading.style.color = 'red';
+});
+
+Other selection methods : document.getElementsByTagName() -> returns a collection(array) of elements, document.getElementsByClassName(), document.querySelector(), document.querySelectorAll(). 
+
+The last two are more generic in nature and can be used to select elements via the CSS style, i.e. direct for tags, # for ids, and . for classes. Can also be used to select via attributes as well. 
+
+document.querySelector([title="label"]) i.e. with attribute and its corresponding value in the square brackets. 
+
+Also querySelectorAll returns all elements that satisfy the conditions whereas querySelector selects only the first element.
+
+Popular resources to check for cross platform compatability are MDN, caniuse.com, babel. Some features of javascript might not be supported by all browsers and might lead to errors.
+
+
