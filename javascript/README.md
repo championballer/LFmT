@@ -161,4 +161,9 @@ let navigationLinks = document.querySelectorAll('nav>ul>li>a[href]');
 let galleryLinks = document.querySelectorAll('#gallery>li>a[href]'); 
 let footerImages = document.querySelectorAll('footer>a>img');
 
+# Modifying element contents on a webpage
+
+textContent returns the text content of the selected element and can be manipulated. The inner html returns the string for exact html inside the tag and can also be manipulated accordingly.
+
+Element.attribute and Element.className are also modifier methods.
 
