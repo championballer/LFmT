@@ -172,5 +172,9 @@ Element.style is itself an object and is used to override the style of the eleme
 Element.style.color;
 Element.style.backgroundColor;
 
-Style is used a lot to show and hide elements on a page.
+Style is used a lot to show and hide elements on a page. style.display can be used to toggle between displaying and not displaying some content on a webpage. The two values that it can take are 'none' & 'block'.
 
+document.createElement(element); Doesn't straight away make the element appear on the page, needs to be included in the dom of the page. This is done by **selecting some element and then appending the created element to that selected element**.
+
+Node.appendChild(childElement); 
+Node.removeChild(childElement);
