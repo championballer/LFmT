@@ -155,4 +155,10 @@ Also querySelectorAll returns all elements that satisfy the conditions whereas q
 
 Popular resources to check for cross platform compatability are MDN, caniuse.com, babel. Some features of javascript might not be supported by all browsers and might lead to errors.
 
+To select a specific attributed element, we need to use square brackets for the element and mention the property, and the proper hierarchy needs to be mentioned to get the desired effect.
+
+let navigationLinks = document.querySelectorAll('nav>ul>li>a[href]');
+let galleryLinks = document.querySelectorAll('#gallery>li>a[href]'); 
+let footerImages = document.querySelectorAll('footer>a>img');
+
 
