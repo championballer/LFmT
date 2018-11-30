@@ -166,4 +166,11 @@ let footerImages = document.querySelectorAll('footer>a>img');
 textContent returns the text content of the selected element and can be manipulated. The inner html returns the string for exact html inside the tag and can also be manipulated accordingly.
 
 Element.attribute and Element.className are also modifier methods.
+Element.value
+Element.style is itself an object and is used to override the style of the element set in either html file or css. Element.style are mostly used as setters and not getters because of no knowledge availability of styling information.
+
+Element.style.color;
+Element.style.backgroundColor;
+
+Style is used a lot to show and hide elements on a page.
 
