@@ -199,3 +199,10 @@ The parent for a certain node can be selected using Node.parentNode and can be u
 previousElementSibling 
 Node.insertBefore() -> parentNode.insertBefore(newNode,referenceNode);
 Nodes will be null if there are no nodes where we are trying to reference them.
+Can also be used to insert element after a certain element. Only the ordering will vary a little.
+
+We also have parentNode.children property to gain access of all children(will obviously return an array) of a node.
+Similarly nextElementSibling can also be used while traversing DOM.
+
+parentNode.firstElementChild
+parentNode.lastElementChild
