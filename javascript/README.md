@@ -188,3 +188,14 @@ Some other event types include mouseover and mouseout.
 Also the event listener gets attached to the elements. They are not there by default for the new ones.
 
 Event bubbling needs to be kept in mind while adding event listeners to elements. 
+
+To act on the cerain child element on which the event has triggered, we can use the event object which needs to be passed in the event handler as an argument 
+(event) for it to become available. 
+
+event.target and event.target.tagName
+
+The parent for a certain node can be selected using Node.parentNode and can be used to traverse the dom, i.e can be used to remove an element on a certain element specific to it by handling the parent aptly.
+
+previousElementSibling 
+Node.insertBefore() -> parentNode.insertBefore(newNode,referenceNode);
+Nodes will be null if there are no nodes where we are trying to reference them.
