@@ -178,3 +178,13 @@ document.createElement(element); Doesn't straight away make the element appear o
 
 Node.appendChild(childElement); 
 Node.removeChild(childElement);
+
+A function can be passed around like a normal argument to other functions i.e. functions are also first class citizens in javascript.
+
+window.setTimeout(func,delay,parameters); delay's unit is milliseconds. Callback function since called after a certain delay. 
+
+Some other event types include mouseover and mouseout.
+
+Also the event listener gets attached to the elements. They are not there by default for the new ones.
+
+Event bubbling needs to be kept in mind while adding event listeners to elements. 
