@@ -18,13 +18,13 @@ const prevItem = lastItem.previousElementSibling;
 prevItem.style.backgroundColor = '#f36f49';
 
 // 5: Store the nested div in a variable named `banner`
-
+const banner = document.querySelector(".wrapper>div");
 banner.className = 'banner';
 
 // 6: Using traversal, store the wrapper div in a variable named `wrapper`
-
+const wrapper = banner.parentNode;
 wrapper.style.backgroundColor = '#fcfcfc';
 
 // 7: Using traversal, store the body in a variable named `body`
-
+const body = wrapper.parentNode;
 body.style.backgroundColor = '#f8fdf3';
