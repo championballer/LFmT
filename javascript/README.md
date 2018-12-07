@@ -234,6 +234,8 @@ Adding event listener in jQuery
 $('#mybox').click(function{
 	alert('You clicked the box');
 });
+``
+``javascript
 $('h1').click(()=>{
 	alert('You clicked h1');
 });
