@@ -218,24 +218,25 @@ __adds conveniences which make dom manipulation much easier.__ Uses CSS selector
 
 jQuery can be considered a js function and has its own methods added. We place the element to be selected with the apt CSS selector in its arguments, and then apply the required method. 
 
-``javascript
+``
 	jQuery('#mybox').hide();
 ``
 
 The jQuery above can be replaced by a $ sign which acts as a shorthand for jQuery.
 
-``javascript
+``
 	$('#mybox').hide();
 ``
 
 Adding event listener in jQuery 
 
-``javascript
+``
 $('#mybox').click(function{
 	alert('You clicked the box');
 });
 ``
-``javascript
+
+``
 $('h1').click(()=>{
 	alert('You clicked h1');
 });
