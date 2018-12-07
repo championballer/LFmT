@@ -202,8 +202,8 @@ event.target and event.target.tagName
 previousElementSibling 
 Node.insertBefore() -> parentNode.insertBefore(newNode,referenceNode);
 
-13. Nodes will be null if there are no nodes where we are trying to reference them.
-Can also be used to insert element after a certain element. Only the ordering will vary a little.
+*Note.* Nodes will be null if there are no nodes where we are trying to reference them.
+13.Can also be used to insert element after a certain element. Only the ordering will vary a little.
 
 14. We also have parentNode.children property to gain access of all children(will obviously return an array) of a node.
 Similarly nextElementSibling can also be used while traversing DOM.
