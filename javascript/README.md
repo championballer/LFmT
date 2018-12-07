@@ -210,3 +210,31 @@ Similarly nextElementSibling can also be used while traversing DOM.
 
 parentNode.firstElementChild
 parentNode.lastElementChild
+
+## jQuery
+
+__adds conveniences which make dom manipulation much easier.__ Uses CSS selectors for selecting elements. Was created in the first place to enable easier cross platform javascript programming, since things running on one browser didn't always run on others. Due to the recent advancements in browser tech, there is debate if whether jQuery is required at all, and the answer is yes. 
+
+jQuery can be considered a js function and has its own methods added. We place the element to be selected with the apt CSS selector in its arguments, and then apply the required method. 
+
+``javascript
+	jQuery('#mybox').hide();
+``
+
+The jQuery above can be replaced by a $ sign which acts as a shorthand for jQuery.
+
+``javascript
+	$('#mybox').hide();
+``
+
+Adding event listener in jQuery 
+
+``javascript
+$('#mybox').click(function{
+	alert('You clicked the box');
+});
+
+$('h1').click(()=>{
+	alert('You clicked h1');
+});
+``
