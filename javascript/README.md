@@ -201,6 +201,7 @@ event.target and event.target.tagName
 
 previousElementSibling 
 Node.insertBefore() -> parentNode.insertBefore(newNode,referenceNode);
+
 13. Nodes will be null if there are no nodes where we are trying to reference them.
 Can also be used to insert element after a certain element. Only the ordering will vary a little.
 
