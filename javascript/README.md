@@ -124,7 +124,7 @@ const sayName = () => {
 
 8. Single argument arrow functions can be made very concise and can be used to clean up code as much as possible. If there is only one argument then paranthesis are not required. If there is only one line then return is not required. Even the curly braces can be removed in case of single line functions.
 
-# DOM (Document Object Model)
+## DOM (Document Object Model)
 
 1. Three basic steps for adding interactivity on a webpage : 1. Selecting elements
 	2. Manipulating elements and corresponding contents
