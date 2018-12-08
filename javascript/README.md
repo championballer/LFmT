@@ -242,7 +242,7 @@ $('h1').click(()=>{
 });
 ``
 
-__jQuery needs to be added to the document wherever it is used. Even in console if used there.__
+__jQuery needs to be added to the document wherever it is used. Even in console if used there.__ This can be done by adding the js file linking it offline or adding its online linked file.
 
 All jQuery animations run for 100ms by default. Can be changed by passing a value as an argument.
 
@@ -260,3 +260,36 @@ Without parameters, .html() is a getter and with them it is a setter.
 Inserting html in .text() gets it to be rendered by the browser as plaintext. For that to happen we need to work with the .html() method.
 
 To extract information from user input using forms, select the element and then use .val() method to work through.
+
+Unobstrusive js : 1.separation of conerns
+2. cross browser consistency
+3. performance enhancement : user should have the same exp. even if js is blocked or unavailable for any reason. In the spoiler exercise, we want the spoiler to be avialable if js isn't and for the button to be created dynamically and then to have the functionality as before.
+
+.append() and .prepend() can be used to add elements to certain elements on the page. append adds the element as the last child whereas .prepend adds the element as the first child. 
+
+``
+const $button = $('<button>Reveal Spoiler</button>'); //Creates the element with this html
+``
+
+having jQuery variables with $ sign is a convention to keep in mind different variables depending on the framework.
+
+Other event handling methods : .mouseover(): When mouse moves over an element, 
+.keypress(): certain key on an input, 
+.focus(): when input field is clicked.
+.mouseleave()
+
+Events can be added to the same element if the function to be executed along with them is same, using .on(events,function) method.
+
+``javascript
+$('#element').on('click keypress',function(){
+	});
+``
+
+The order in which the jQuery runs matters a lot. There might be issues when we add events to dynamically added elements due to ordering. To account for this we use event delegation(__attach an event listener to a parent element that fires when an event occurs on a child element__) and event propogation(when an event moves from child to parent, and due to this it doesn't matter if the element is present at load up or not. If at any point of time, the child exits then the effect will take place through the parent element). We add the dynamic behaviour using the parent element of the intended element which does not exist yet using the .on() method.
+
+``javascript
+$(parent).on(event,child,function());
+``
+
+The event object can be used to handle the current child element on which the event takes place. It contains information about the event that took place and needs to passed as a parameter to an anonymous function. 
+
