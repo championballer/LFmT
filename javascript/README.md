@@ -295,7 +295,7 @@ The event object can be used to handle the current child element on which the ev
 
 DOM traversal using jQuery
 
-$('li').eq(2); -> returns the li with index 2 on the page. Negative indices are also accounted for. .prev() and .next() to access prev and next sibling elements in the dom. 
+$('li').eq(2); -> returns the li with index 2 on the page. Negative indices are also accounted for. .prev() and .next() to access prev and next sibling elements in the dom. .parent() to traverse to the parent of the element.
 
 'this' can be used in place of event.target only when using function (){} for anonymous function. If arrow function is employed then this might not work. To read : https://dmitripavlutin.com/when-not-to-use-arrow-functions-in-javascript/
 
@@ -329,3 +329,31 @@ $submit.attr('disabled',true).addClass('disabled');
 ``
 
 preventDefault() method is to stop the browser from entering a default behaviour on certain event. Like the default setting in a browser is to follow a link when clicked but that can be prevented using preventDefault(). Done through event object i.e. event.preventDefault();
+
+Looping in jQuery: 
+
+``javascript
+for(let index = 0;i<$collection.length;index++)
+{
+	const $element = $collection[index];
+	//do something with the element
+}
+``
+
+An alternative for the above is the following
+
+``javascript
+	$collection.each(function(index,element){});
+``
+
+Adding jQuery using CDN(Content Delivery Network) is a neater way of using websites without needing the files offline of having to download them to run.
+
+## AJAX(Asyncronous Javascript and XML)
+
+loading content without reloading webpages. Examples include google maps, where we move around the map, without the page reloading. Or sites where voting is active. Its more like rather than asking for complete webpages on a certain event from a server. We ask for changes to be made to the current webpage and accordingly those changes sent as response by the server are incorporated.
+
+Official name is XMLHttpRequest(XHR) Object.
+
+A : Asynchronous - The webpage doesn't freeze whenever a request is sent out rather it continues to stay interactive and responds to other requests if made. The responses might not come in the same order as they were sent due to other constraints.
+
+XML : Way to handle server requests and responses. Not a preferred method any more. 
