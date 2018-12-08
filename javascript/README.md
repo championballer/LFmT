@@ -291,5 +291,41 @@ The order in which the jQuery runs matters a lot. There might be issues when we 
 $(parent).on(event,child,function());
 ``
 
-The event object can be used to handle the current child element on which the event takes place. It contains information about the event that took place and needs to passed as a parameter to an anonymous function. 
+The event object can be used to handle the current child element on which the event takes place. It contains information about the event that took place and needs to passed as a parameter to an anonymous function. It can be used as any of the three, 'event','evt' or 'e' as per convention. To access the current element, we use target.
 
+DOM traversal using jQuery
+
+$('li').eq(2); -> returns the li with index 2 on the page. Negative indices are also accounted for. .prev() and .next() to access prev and next sibling elements in the dom. 
+
+'this' can be used in place of event.target only when using function (){} for anonymous function. If arrow function is employed then this might not work. To read : https://dmitripavlutin.com/when-not-to-use-arrow-functions-in-javascript/
+
+There are two types of selectors that can be used with jQuery i.e. CSS and jQuery specific selectors.
+
+:odd selector helps select odd elements of a certain heavier selector.
+
+__One added benefit of jQuery is the inbuilt methods that run loops on the object in the variable, hence it runs on all variables.__
+
+$('a:odd').hide();
+
+The jQuery function doesn't return regular dom objects rather jQuery elements.
+
+String matching while selecting elements. So '^' checks for value from front and $ checks for back.
+
+.attr() to modify or get attributes of the elements. Can be used as both getter and setter method. Can be used as a getter by just passing the attribute name in arguments and as setter by passing both attribute and to be set value as arguments.
+
+To manipulate the elements we can get or set using the .css() method in a similar manner as above. .addClass() adds the corresponding class to the selected element. .removeClass(), .toggleClass()
+
+^= can be used to select elements with certain attributes whose value start with the value after the '='. Similarly $ is used for terminating characters in a string. 
+
+``javascript
+const $secureLinks = $(a[href^="https://"]);
+``
+
+When using css properties in javascript use Camel Case and not kabab case as used in css.
+
+``javascript
+const $submit = $('.submit-btn');
+$submit.attr('disabled',true).addClass('disabled');
+``
+
+preventDefault() method is to stop the browser from entering a default behaviour on certain event. Like the default setting in a browser is to follow a link when clicked but that can be prevented using preventDefault(). Done through event object i.e. event.preventDefault();
