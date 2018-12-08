@@ -241,3 +241,22 @@ $('h1').click(()=>{
 	alert('You clicked h1');
 });
 ``
+
+__jQuery needs to be added to the document wherever it is used. Even in console if used there.__
+
+All jQuery animations run for 100ms by default. Can be changed by passing a value as an argument.
+
+Method chaining is also possibe in jQuery. 
+``
+$('#flashMessage').hide().slideDown(1000).delay(3000).slideUp(1000);
+``
+
+Most jQuery methods return the same elements they were called with and hence method chaining becomes logically possible here. Can be thought of being analogous to factory creation methods.
+
+Analogous to vanilla js's .textContent(), .innerHTML() : .text() and .html() methods in jQuery.
+
+Without parameters, .html() is a getter and with them it is a setter.
+
+Inserting html in .text() gets it to be rendered by the browser as plaintext. For that to happen we need to work with the .html() method.
+
+To extract information from user input using forms, select the element and then use .val() method to work through.
