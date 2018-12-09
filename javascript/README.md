@@ -356,4 +356,21 @@ Official name is XMLHttpRequest(XHR) Object.
 
 A : Asynchronous - The webpage doesn't freeze whenever a request is sent out rather it continues to stay interactive and responds to other requests if made. The responses might not come in the same order as they were sent due to other constraints.
 
-XML : Way to handle server requests and responses. Not a preferred method any more. 
+XML : Way to handle server requests and responses. Not a preferred method any more.
+
+The 4 steps in which AJAX works : 
+1. Create XMLHttpRequest Object , const request = new XMLHttpRequest();
+2. Create callback function
+3. Open request
+4. Send request 
+
+```javascript
+request.onreadystatechange = function(){
+	if(request.readyState === 4)
+	{
+		document.querySelector('#ajax').innerHTML = request.responseText;
+	}	
+};
+
+request.open('GET','sidebar.html');
+```
