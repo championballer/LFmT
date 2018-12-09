@@ -13,7 +13,7 @@ Note: parseFloat(“1.89 light years away”) returns only 1.89. The string need
 	Math.floor()
 	Math.random() - Generates a random number between 0 and 1.
 
-4. Comparing strings, we see the lexicological order of letters. For example ‘apple’ < ‘bear’. Also numbers<letters
+4. Comparing strings, we see the lexicological order of letters. For example ‘apple’ < ‘bear’. Also numbers < letters
 
 5. Boolean values used using true and false
 
@@ -31,10 +31,11 @@ Note: parseFloat(“1.89 light years away”) returns only 1.89. The string need
 
 11. Anonymous functions : Assigning functions to variables.
 
+```javascript
 var alertRandom = function () {
 //definition
 };
-
+```
 Ends with semicolon, both at definition and calling
 
 12. Multiple things can’t be returned in js.(like is possible in python, but an object can be returned, similar behaviour as to that of c++
@@ -78,11 +79,13 @@ This element variable stores the node reference to the tag in the document objec
 
 2. Array different from object because of the accessing method, i.e. index and keys. Accessing objects in objects can be done both by [] and . notation. It can also be used to add new elements to the object.
 
-3. To iterate over an object, we use for in loop that is, for ( var prop in student)
+3. To iterate over an object, we use for in loop that is,
+```javascript
+for ( var prop in student)
 {
 	console.log(prop);
 } 
-
+```
 4. To access values corresponding to the key, we need to use square brackets only. dots can be used. And for square we need to use quotes in key. 
 
 5. json : javascript object notation : one of the most popular data exchange formats on the web. Used with Ajax to exchange data between server and browser.
@@ -116,10 +119,11 @@ Use of var should be avoided because of scope issues.
 
 6. Arrow function 
 
+```javascript
 const sayName = () => {
 	console.log("Arrow Function");
 }
-
+```
 7. There were majorly two ways to declare variables. One was function declaration and other was expression. Arrow is the third.
 
 8. Single argument arrow functions can be made very concise and can be used to clean up code as much as possible. If there is only one argument then paranthesis are not required. If there is only one line then return is not required. Even the curly braces can be removed in case of single line functions.
@@ -137,14 +141,16 @@ const sayName = () => {
 <insert picture>
 
 Sample of selecting element 
-
+```javascript
 const heading = document.getElementById('myHeading');
-
+```
 4. For event listener, we need to pass the event and the corresponding action function when the event occurs. Also here when we use const, that doesn't mean that we can not change its underlying properties or use its method functions, what it really means is that it can't be reassigned.
 
+```javascript
 heading.addEventListener('click',()=>{
 	myHeading.style.color = 'red';
 });
+```
 
 5. Other selection methods : document.getElementsByTagName() -> returns a collection(array) of elements, document.getElementsByClassName(), document.querySelector(), document.querySelectorAll(). 
 
@@ -158,10 +164,11 @@ Also querySelectorAll returns all elements that satisfy the conditions whereas q
 
 7. To select a specific attributed element, we need to use square brackets for the element and mention the property, and the proper hierarchy needs to be mentioned to get the desired effect.
 
+```javascript
 let navigationLinks = document.querySelectorAll('nav>ul>li>a[href]');
 let galleryLinks = document.querySelectorAll('#gallery>li>a[href]'); 
 let footerImages = document.querySelectorAll('footer>a>img');
-
+```
 ## Modifying element contents on a webpage
 
 1. textContent returns the text content of the selected element and can be manipulated. The inner html returns the string for exact html inside the tag and can also be manipulated accordingly.
@@ -218,38 +225,38 @@ __adds conveniences which make dom manipulation much easier.__ Uses CSS selector
 
 jQuery can be considered a js function and has its own methods added. We place the element to be selected with the apt CSS selector in its arguments, and then apply the required method. 
 
-``
+```javascript
 	jQuery('#mybox').hide();
-``
+```
 
 The jQuery above can be replaced by a $ sign which acts as a shorthand for jQuery.
 
-``
+```javascript
 	$('#mybox').hide();
-``
+```
 
 Adding event listener in jQuery 
 
-``
+```javascript
 $('#mybox').click(function{
 	alert('You clicked the box');
 });
-``
+```
 
-``
+```javascript
 $('h1').click(()=>{
 	alert('You clicked h1');
 });
-``
+```
 
 __jQuery needs to be added to the document wherever it is used. Even in console if used there.__ This can be done by adding the js file linking it offline or adding its online linked file.
 
 All jQuery animations run for 100ms by default. Can be changed by passing a value as an argument.
 
 Method chaining is also possibe in jQuery. 
-``
+```javascript
 $('#flashMessage').hide().slideDown(1000).delay(3000).slideUp(1000);
-``
+```
 
 Most jQuery methods return the same elements they were called with and hence method chaining becomes logically possible here. Can be thought of being analogous to factory creation methods.
 
@@ -267,9 +274,9 @@ Unobstrusive js : 1.separation of conerns
 
 .append() and .prepend() can be used to add elements to certain elements on the page. append adds the element as the last child whereas .prepend adds the element as the first child. 
 
-``
+```javascript
 const $button = $('<button>Reveal Spoiler</button>'); //Creates the element with this html
-``
+```
 
 having jQuery variables with $ sign is a convention to keep in mind different variables depending on the framework.
 
@@ -280,16 +287,16 @@ Other event handling methods : .mouseover(): When mouse moves over an element,
 
 Events can be added to the same element if the function to be executed along with them is same, using .on(events,function) method.
 
-``javascript
+```javascript
 $('#element').on('click keypress',function(){
 	});
-``
+```
 
 The order in which the jQuery runs matters a lot. There might be issues when we add events to dynamically added elements due to ordering. To account for this we use event delegation(__attach an event listener to a parent element that fires when an event occurs on a child element__) and event propogation(when an event moves from child to parent, and due to this it doesn't matter if the element is present at load up or not. If at any point of time, the child exits then the effect will take place through the parent element). We add the dynamic behaviour using the parent element of the intended element which does not exist yet using the .on() method.
 
-``javascript
+```javascript
 $(parent).on(event,child,function());
-``
+```
 
 The event object can be used to handle the current child element on which the event takes place. It contains information about the event that took place and needs to passed as a parameter to an anonymous function. It can be used as any of the three, 'event','evt' or 'e' as per convention. To access the current element, we use target.
 
@@ -317,34 +324,34 @@ To manipulate the elements we can get or set using the .css() method in a simila
 
 ^= can be used to select elements with certain attributes whose value start with the value after the '='. Similarly $ is used for terminating characters in a string. 
 
-``javascript
+```javascript
 const $secureLinks = $(a[href^="https://"]);
-``
+```
 
 When using css properties in javascript use Camel Case and not kabab case as used in css.
 
-``javascript
+```javascript
 const $submit = $('.submit-btn');
 $submit.attr('disabled',true).addClass('disabled');
-``
+```
 
 preventDefault() method is to stop the browser from entering a default behaviour on certain event. Like the default setting in a browser is to follow a link when clicked but that can be prevented using preventDefault(). Done through event object i.e. event.preventDefault();
 
 Looping in jQuery: 
 
-``javascript
+```javascript
 for(let index = 0;i<$collection.length;index++)
 {
 	const $element = $collection[index];
 	//do something with the element
 }
-``
+```
 
 An alternative for the above is the following
 
-``javascript
+```javascript
 	$collection.each(function(index,element){});
-``
+```
 
 Adding jQuery using CDN(Content Delivery Network) is a neater way of using websites without needing the files offline of having to download them to run.
 
