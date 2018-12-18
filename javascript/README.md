@@ -381,3 +381,11 @@ request.onreadystatechange = function(){
 
 request.open('GET','sidebar.html');
 ```
+
+## NodeJS
+
+1. Applications : Chat applications, takes a video of the sender when they send messages and hence adds another element of personality to the communication. Good to work on real time applications where there are a lot of people interacting with each other. Productivity tools (Cloud 9), and many other useful applications. Wallmart, PayPal use nodejs.
+
+2. After installation for nodejs and npm(node package manager) is done. (http://treehouse.github.io/installation-guides/linux/node-linux.html)
+
+3. The file is saved with normal js extension, and is run using - (node filename).
