@@ -398,13 +398,39 @@ request.open('GET','sidebar.html');
 
 7. Why nodejs? The assistant analogy, handling one request at a time, and not being able to process other requests until and unless the response for that request is received back (blocking languages). Nodejs is more efficient in this area (Non-blocking). Fast and efficient. Doesn't take up that much computing resources.
 
-8. API : Application Programming Interface, The documentation explains the API or how we interface with the objects, environment or framework currently being worked on. The objects or methods that can be used in any given environment. In browser it is dom to interface with the webpages. In nodejs the API is what we interface with the file system or other APIs or making HTTP requests. 
+8. API : Application Programming Interface, The documentation explains the API or how we interface with the objects, environment or framework currently being worked on. The objects or methods that can be used in any given environment. In browser it is dom to interface with the webpages. In nodejs the API is what we interface with the file system or other APIs or making HTTP requests. Decreasing breaking risk from 0 - 3. 0 - Deprecated, 1 - Experimental. 2 - Stable, 3 - Locked. We are safe using 2 and 3 apis'. Common ones : console, filesystem (read and write files using this) and http, https to retrieve information from the internet.
 
-9. Example code : 
+9. Each api will have to be included before being put into use in the application. We receive the api in a variable and using that variable we access the methods of the api. For example
 ```javascript
 const https = require('https');
 
-https.get("url",(res)=>{})
-``` 
+https.get("url",(res)=>{
 
-res here is the response being sent by the server on the get request made here. Since nodejs is made up in the non-blocking method, the application can still be doing other things while we wait for a response from the server.
+	});
+``` 
+res here is the response being sent by the server on the get request made here. Since nodejs is made up in the non-blocking method, the application can still be doing other things while we wait for a response from the server. Keep in mind the stability index before using anything in nodejs.  
+
+'on' used with an object means it is responding to an event. Encountered very frequently in nodejs. There can be two events in javascript. And callbacks can be defined for these. They are User event and System event. The difference between the two comes in with reference to the triggers. In user events the event is both defined and triggered by the user but in a system event it is defined by a user but gets triggered by the system.
+
+10. Here https is the object and needs to be included first in the file to be used later. We use the get method on the https object and pass it the url that needs to be fetched. The response from the server comes to the res object which can be later accessed in the callback function to be which it needs to be passed. 
+
+```javascript
+const request = https.get(`https://teamtreehouse.com/${username}`,(res)=>{
+	console.dir(res);
+
+	res.on('data', data=>{
+			//do something with data
+			console.log("Data:",data.toString());
+		});
+
+	res.on('end',()=>{
+
+		});
+});
+```
+
+The response of a js request is in the form of a buffer since all the data in nodejs doesn't come at once, rather it comes in data packets. And it can be used as string using data.toString(); 
+Generally whenever there is a data event to an object in node, there will be a corresponding end event as well. That is triggered when the i/p stream doesn't have any more data to send.
+
+11. typeof keywork can be used to find the type of any variable.
+12. Process of converting a string into a datastructure is called parsing.
