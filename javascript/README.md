@@ -382,10 +382,29 @@ request.onreadystatechange = function(){
 request.open('GET','sidebar.html');
 ```
 
-## NodeJS
+## NodeJS : Javascript outside the browser
 
 1. Applications : Chat applications, takes a video of the sender when they send messages and hence adds another element of personality to the communication. Good to work on real time applications where there are a lot of people interacting with each other. Productivity tools (Cloud 9), and many other useful applications. Wallmart, PayPal use nodejs.
 
 2. After installation for nodejs and npm(node package manager) is done. (http://treehouse.github.io/installation-guides/linux/node-linux.html)
 
 3. The file is saved with normal js extension, and is run using - (node filename).
+
+4. Three common methods in nodejs : console.log(), console.error() - to print errors to the terminal, console.dir({}) - to print an object in readable format
+
+5. node only results in the js REPL, which can be used to experiment with code.
+
+6. While working with javascript we have two kinds of objects : a)native(provided by js and available everywhere), b)host : window, document, history and xmlhttprequest(provided by the environment, dependent on the context as to where the language is being operated, in the browser using browser specific apis, these will be different from the ones in other environments and context). For example the DOM, or Document Object Model is not available in Node.js but are available in the Browser. Likewise, the host objects to access the local file system is not available in the Browser but are in Node.js. Google chrome's V8 engine led to nodejs. Chorme's V8 engine ripped out, leaving behind host objects to welcome other objects to build other applications. Coupling of the V8 engine with the APIs is called the nodejs environment. Important to know what is available to us and when while dealing with makinig apps.
+
+7. Why nodejs? The assistant analogy, handling one request at a time, and not being able to process other requests until and unless the response for that request is received back (blocking languages). Nodejs is more efficient in this area (Non-blocking). Fast and efficient. Doesn't take up that much computing resources.
+
+8. API : Application Programming Interface, The documentation explains the API or how we interface with the objects, environment or framework currently being worked on. The objects or methods that can be used in any given environment. In browser it is dom to interface with the webpages. In nodejs the API is what we interface with the file system or other APIs or making HTTP requests. 
+
+9. Example code : 
+```javascript
+const https = require('https');
+
+https.get("url",(res)=>{})
+``` 
+
+res here is the response being sent by the server on the get request made here. Since nodejs is made up in the non-blocking method, the application can still be doing other things while we wait for a response from the server.
