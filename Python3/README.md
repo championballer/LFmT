@@ -10,3 +10,13 @@ This repository contains code written while picking up python. It will contain m
 6. input(prompt) is used to take in input and accepts string by default 
 7. Strings are immutable. len(string) used to find length of string. Every variable are objects of the global class. They have specific methods and data members.
   a) str.upper()
+
+8. Random library can be used to generate random values in python.
+
+## Dunder Main (\_\_main\_\_) 
+
+Double underscore (method name) double underscore - adopted by community as dunder.
+
+__\_\_name\_\_ is a built-in variable which evaluates to the name of the current module.__ Since there is no main() function in Python, when the command to run a python program is given to the interpreter, the code that is at level 0 indentation is to be executed. However, before doing that, it will define a few special variables. \_\_name\_\_ is one such special variable. If the source file is executed as the main program, the interpreter sets the \_\_name\_\_ variable to have a value “\_\_main\_\_”. If this file is being imported from another module, \_\_name\_\_ will be set to the module’s name.
+
+The sequence in which code is written in a scrippting language like python is quite important, including the code that is imported. Since all code in files imported and the source file is run by default. We can use \_\_main\_\_ to check if the file is being run as a source file or as a library and accordingly work around functions. 
