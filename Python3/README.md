@@ -12,7 +12,7 @@ This repository contains code written while picking up python. It will contain m
   a) str.upper()
 
 8. Random library can be used to generate random values in python.
-9. 
+9. //todo : Clearing screen from os library
 
 ## Dunder Main (\_\_main\_\_) 
 
