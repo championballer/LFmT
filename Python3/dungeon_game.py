@@ -35,7 +35,7 @@ def draw_grid(player):
 	grid = [[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]]
 	grid[x][y] = 1
 	print_grid(grid)
-
+	
 def possible_moves(player):
 	MOVES = ['LEFT','RIGHT','UP','DOWN']
 	x = player[0]
@@ -52,12 +52,21 @@ def possible_moves(player):
 
 	return MOVES
 
-def update_player(cmd):
+def update_player(cmd,player):
 	x = player[0]
 	y = player[1]
-	
+
 	if cmd == 'RIGHT':
-		
+		y+=1
+	elif cmd == 'LEFT':
+		y-=1
+	elif cmd == 'UP':
+		x-=1
+	elif cmd == 'DOWN':
+		x+=1
+	player = (x,y)
+	return player
+
 monster,door,player = get_locations()
 
 while True:
@@ -71,4 +80,10 @@ while True:
 		print("Thanks for playing")
 		break
 	# Based on the input update the player's position, and check if win/lose accordingly decide to break or continue
-	
+	player = update_player(cmd,player)
+	if player == monster:
+		print('Sorry, you lose')
+		break
+	elif player == door:
+		print('Yay, you win')
+		break
