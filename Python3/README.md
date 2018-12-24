@@ -13,6 +13,13 @@ This repository contains code written while picking up python. It will contain m
 
 8. Random library can be used to generate random values in python.
 9. //todo : Clearing screen from os library
+10. Use of {}, .format is quite helpful
+
+```python
+print("Hello {}".format("Shiv")) #prints Hello Shiv
+```
+
+11. Use of \*args,\*\*kwargs is important for arguments in a function. 
 
 ## Dunder Main (\_\_main\_\_) 
 
@@ -56,7 +63,7 @@ print(hriday.sneaky) #False - Thief class has control
 
 6. instances of a class can be deallocated using del keyword.
 
-7. While defining methods in a class. If it doesn't have self as an argument, then it can only be called by the class object. and if self is mentioned as a parameter. Then the instance can be used to access the method directly and if we want to access the method using the class variable then we need to pass an instance as argument.
+7. While defining methods in a class. If it doesn't have self as an argument, then it can only be called by the class object. and if self is mentioned as a parameter. Then the instance can be used to access the method directly and if we want to access the method using the class variable then we need to pass an instance as argument. self is used to refer to the current instance like this in other languages. 
 
 ```python
 class Thief:
@@ -69,3 +76,24 @@ class Thief:
 		print('sample')
 ```
 
+8. All of the same rules apply to method arguments as they do to function arguments, with the exception that the first argument has to represent the instance. We can use default values, \*args, and \*\*kwargs.
+
+9. \_\_init\_\_ is the constructor in python. Hence can be used as initializer and is called by default.
+10. setattr() is a function that accepts three parameters: object, attribute and its value, and works accordingly. It can be used to map the kwargs properly in the object without requiring us to do anything manually by running a loop over kwargs. 
+
+```python
+def __init__(self,name,**kwargs):
+	self.name = name
+	for key,value in kwargs.items():
+		setattr(self,key,value)
+```
+
+11. There is another method of updating attributes that uses \_\_dict\_\_. dict is a dictionary represntation of all the writable attributes of the object. But is advised not to use it since dict is supposed to be used as readonly. That is, use with caution.
+
+```python
+self.__dict__.update(kwargs)
+```
+
+## Links
+
+1. https://www.digitalocean.com/community/tutorials/how-to-use-args-and-kwargs-in-python-3
