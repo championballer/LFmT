@@ -24,4 +24,48 @@ The sequence in which code is written in a scrippting language like python is qu
 
 ## OOP
 
-1. Everything in python is an object. Integer, strings, functions, etc., all are objects. The keyword for class is class as def is for functions. The same verb, adjectives, principle for classes, and how classes are blueprints. Example can be of student. An object can also be referred to as an instance of the class. 
+1. Everything in python is an object. Integer, strings, functions, etc., all are objects. The keyword for class is class as def is for functions. The same verb, adjectives, principle for classes, and how classes are blueprints. Example can be of student. An object can also be referred to as an instance of the class.
+
+2. Class names are camel case with the first letter of the entire variable as capital.
+3. dot notation to access members of a class. 
+4. Also class and instance are responsible for their own variables. For example
+
+```python
+class Thief:
+	sneaky = True
+
+shiv = Thief()
+print(shiv.sneaky) #True	
+print(Thief.sneaky) #True
+shiv.sneaky = False 
+print(Thief.sneaky) #True
+print(shiv.sneaky) #False
+``` 
+
+5. Also till the instance does not act on its attribute pre defined in class, till then the class variable has a control on the values, and it loses control post the first access.
+
+```python
+shiv = Thief()
+hriday = Thief()
+
+shiv.sneaky = True
+Thief.sneaky = False
+print(shiv.sneaky) #True - Thief class lost control
+print(hriday.sneaky) #False - Thief class has control
+```
+
+6. instances of a class can be deallocated using del keyword.
+
+7. While defining methods in a class. If it doesn't have self as an argument, then it can only be called by the class object. and if self is mentioned as a parameter. Then the instance can be used to access the method directly and if we want to access the method using the class variable then we need to pass an instance as argument.
+
+```python
+class Thief:
+	sneaky = True
+
+	def pickpocket():
+		print('Yay')
+
+	def sample(self):
+		print('sample')
+```
+
