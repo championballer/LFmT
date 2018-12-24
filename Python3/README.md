@@ -94,6 +94,14 @@ def __init__(self,name,**kwargs):
 self.__dict__.update(kwargs)
 ```
 ### Inheritance
+1. Every class extends from a built in class called object. In legacy python, this had to be specified specifically but that is not the case anymore. 
+2. We inherit a class to another by passing it as argument as the child's class definition. 
+
+```python
+class Thief(Character):
+```
+
+3. We override functions in our child class and can call the code of the super class using super() method. Sub classes donot need to have the same function defintion as their parent counterparts.
 
 ## Links
 
