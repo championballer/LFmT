@@ -93,6 +93,7 @@ def __init__(self,name,**kwargs):
 ```python
 self.__dict__.update(kwargs)
 ```
+### Inheritance
 
 ## Links
 
