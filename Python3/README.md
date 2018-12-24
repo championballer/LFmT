@@ -103,6 +103,21 @@ class Thief(Character):
 
 3. We override functions in our child class and can call the code of the super class using super() method. Sub classes donot need to have the same function defintion as their parent counterparts.
 
+4. Method Resolution Order(MRO) : dictates in what order the super classes will be searched for an attribute or method when a child class calls for it. Its a depth first search, from left to right. Object is the global superclass, and providing super in all classes is not a big issue.
+
+5. Sometimes it happens that MRO breaks down and is not able to pass variables to super or child classes properly. It is better to pass them explicitly and not with \*args. 
+
+6. isinstance('a',(str,bool,dict)) -> False, will return True if any one satisfies the condition (Searches the entire family tree)
+7. issubclass(bool,int) -> True
+
+```python
+issubclass(Thief,Character) #->True
+```
+
+8. type(object) tells the parent of the object.
+9. \_\_class\_\_ returns the class which the instance belongs to whereas the dunder name dunder attribute returns the clas name
+
 ## Links
 
 1. https://www.digitalocean.com/community/tutorials/how-to-use-args-and-kwargs-in-python-3
+2. http://python-history.blogspot.com/2010/06/method-resolution-order.html
