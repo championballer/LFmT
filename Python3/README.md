@@ -226,6 +226,21 @@ for item in inv1:
 	print(item)
 ```
 
+8. Subclasses on built ins:
+
+We can extend the features already provided by the builtin objects to suit our custom needs. Extending the creation methods for immutables happens through \_\_new\_\_ and for mutables using \_\_init\_\_.
+
+```python
+class ReversedStr(str):
+
+	def __new__(*args,**kwargs):
+		self = str.__new__(*args,**kwargs)
+		self = self[::-1]
+		return self
+```
+
+We donot use super in place of str in the \_\_new\_\_ method since it is safer to use that. super's behaviour might be unpredictable. \_\_new\_\_ is a class method whereas \_\_init\_\_ is instance centric.
+
 ## Links
 
 1. https://www.digitalocean.com/community/tutorials/how-to-use-args-and-kwargs-in-python-3
