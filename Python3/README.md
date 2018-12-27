@@ -2,24 +2,68 @@
 
 This repository contains code written while picking up python. It will contain major components that go into learning a general purpose language and this readme is supposed to act like a cheatsheet to remember the important as well as unique components of python that will enable picking and repicking it in very efficient manner.
 
-1. No variable type declaration
-2. REPL(Read, Evaluate, Print, Loop) : Python Shell : Can be used to test output for certain commands and for certain input and output cases. Read the line, Evaluate it, Print the result, and then iterate for further commands.
-3. Printing is done using print(), multiple strings can be passed, end ="\n" can also be included to move to next line post printing. 
-4. Quotes usage is normal. 
-5. Snakecase while naming variables. my_name
-6. input(prompt) is used to take in input and accepts string by default 
-7. Strings are immutable. len(string) used to find length of string. Every variable are objects of the global class. They have specific methods and data members.
-  a) str.upper()
+Functions with an interpreter and hence does not need the entire program to be compiled and checked for errors before running. Runs line by line. 
 
-8. Random library can be used to generate random values in python.
-9. //todo : Clearing screen from os library
-10. Use of {}, .format is quite helpful
+## Basics
+
+1. No variable type declaration. Naming conventions are similar to those in another languages.
+
+2. REPL(Read, Evaluate, Print, Loop), Python Shell : Can be used to test output for certain commands and for certain input and output cases. Read the line, Evaluate it, Print the result, and then iterate for further commands. 
+
+3. Printing is done using print(), multiple strings can be passed; end ="\n" can also be included as an argument to move to next line post printing. 
+
+4. Quotes usage is normal.  Escape characters also available.
+
+5. Snakecase while naming variables. my_name
+
+6. input(prompt) is used to take in input and accepts string by default. 
+
+7. There is an issue with floating point number representation and computation in python.  
+
+8. Conditions(elif)(uses literals for logical operators, i.e. and,or, not), loops(while, for, for each(iteration should occur over iterable objects)) and functions(``def function_name(parameters)``) don't operate with brackets, rather with indentation. 
+
+9. Strings are immutable. len(string) used to find length of string. += can be used for string concatenation and \*= can be used to duplicate the string 'n' times. Everything we create in python is an object (`global class`) and the variables are references to these objects. str, int, bool all are descendents of object global class. They have specific methods and data members.
+  a) str.upper() - doesn't change the string rather returns a string instead. 
+  b) str.title()
+  c) str(42) - "42"
+  d) string formatting : You can add placeholders in strings and they can be provided later.
 
 ```python
-print("Hello {}".format("Shiv")) #prints Hello Shiv
+  		subject_template = "My name is {}"
+  		subject_template.format("Shiv")
 ```
 
-11. Use of \*args,\*\*kwargs is important for arguments in a function. 
+  e) "ham" in "hamster" - True(Bool work in title case)
+  f) ascii maters in string comparisons.
+
+
+
+10.  importing libraries - import module name. To use a member function or variable of the module, we use the dot notation. Famous examples are math, pandas, numpy, etc. 
+11. Random library can be used to generate random values in python.
+12. Error handling : 
+```python
+		try:
+			Error prone scope
+		except Value Error (Error type) as err(error message if provided with raised error):
+			Code to work when error occurs
+		else:
+			Code to work when the error doesn't occur (not necessary since it can be provided in the scope part itself but is better for good understanding of code)
+```
+Multiple except blocks can be used to handle different types of errors post the try block.
+	Raising erros: 
+
+```python
+	if num<=1:
+		raise Value Error(Msg which will be stored in err)
+```
+
+## Lists
+
+1. Can be created using [] brackets and being assigned to a variable. Flexible with the type of objects it can store. Mutable i.e. changes can be made to the array itself rather than requiring to make a new array and then assigning it to the old variable which happens in case of immutable objects. Normal indexing. Negative indexing allows reverse indexing. 
+
+2. append method can be used to add object to the end of the list. 
+
+
 
 ## Dunder Main (\_\_main\_\_) 
 
