@@ -44,17 +44,17 @@ Functions with an interpreter and hence does not need the entire program to be c
 ```python
 		try:
 			Error prone scope
-		except Value Error (Error type) as err(error message if provided with raised error):
-			Code to work when error occurs
+		except Value Error as err #(We use the type of error in place of the Value error and the error message if provided with raised error is stored in err(can be omitted)):
+			#Code to work when error occurs
 		else:
-			Code to work when the error doesn't occur (not necessary since it can be provided in the scope part itself but is better for good understanding of code)
+			#Code to work when the error does not occur (not necessary since it can be provided in the scope part itself but is better for good understanding of code)
 ```
 Multiple except blocks can be used to handle different types of errors post the try block.
 	Raising erros: 
 
 ```python
 	if num<=1:
-		raise Value Error(Msg which will be stored in err)
+		raise Value Error("") #(Msg which will be stored in err)
 ```
 
 ## Lists
