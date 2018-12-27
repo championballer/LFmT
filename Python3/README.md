@@ -158,10 +158,32 @@ class Thief(Character):
 issubclass(Thief,Character) #->True
 ```
 
-8. type(object) tells the parent of the object.
-9. \_\_class\_\_ returns the class which the instance belongs to whereas the dunder name dunder attribute returns the clas name
+8. type(object) tells the parent of the object. Using .\_\_name\_\_ returns the name of the class the instance belongs to. 
+9. \_\_class\_\_ returns the class which the instance belongs to whereas the \_\_name\_\_ attribute returns the class name.
+
+10. There are other internal methods in python that are automatically available like \_\_str\_\_ which is the representation of the object when print is called. \_\_repr\_\_ to have the formal, real representation of the object and \_\_int\_\_ and \_\_float\_\_ to have the respective representations of the object. Can be worked on with something like NumString. To work with computation on a class, we need to define the arithmetic operations on it. 
+
+```python
+class NumString:
+	def __init__(self,value):
+		self.value = value
+	def __str__(self):
+		return str(self.value)
+	def __int__(self):
+		return int(self.value)
+	def __float__(self):
+		return float(self.value)
+```
+
+```python
+	def __str__(self):
+		return "{}:{}".format(self.__class__.__name__,self.name)
+```
+
+11. ```Emulating Numeric Types:```There are internal methods specified to add arithmetic operations to our classes. That include \_\_add\_\_(self,other) (These are order specific), \_\_radd\_\_ (Reflected add, if the normal add doesn't work then we pass reflected arguments to this to perform add in a different way)(both add and radd receive self first and then the other input), \_\_iadd\_\_ (Inplace add, +=1). There are other methods for division and all in arithmetic operations and can be looked at whenever required. https://docs.python.org/3/reference/datamodel.html?#object.__mul__
 
 ## Links
 
 1. https://www.digitalocean.com/community/tutorials/how-to-use-args-and-kwargs-in-python-3
 2. http://python-history.blogspot.com/2010/06/method-resolution-order.html
+3. https://docs.python.org/3/reference/datamodel.html?#object.__mul__
