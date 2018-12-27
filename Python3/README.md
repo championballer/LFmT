@@ -239,7 +239,31 @@ class ReversedStr(str):
 		return self
 ```
 
-We donot use super in place of str in the \_\_new\_\_ method since it is safer to use that. super's behaviour might be unpredictable. \_\_new\_\_ is a class method whereas \_\_init\_\_ is instance centric.
+*We donot use super in place of str in the \_\_new\_\_ method since it is safer to use that. super's behaviour might be unpredictable. \_\_new\_\_ is a class method whereas \_\_init\_\_ is instance centric.*
+
+For mutable object like lists, we go as follows: Here we take the default self,\*args, \*\*kwargs parameters, along with two separate parameters that are count and the object to preset the list with. We call super to get an empty list object and then we append the list with deep copies of the object passed in the argument. 
+
+```python
+import copy
+
+class FilledList(list):
+
+	def __init__(self,count,object,*args,**kwargs):
+		super().__init__()
+		for _ in range(count):
+			self.append(copy.copy(object))
+
+```
+
+```python
+class JavaScriptObject(dict):
+	def __getattribute__(self,item):
+		try:
+			return self[item]
+		except KeyError:
+			return super().__getattribute__(item)
+```
+We can modify the preset methods of base objects using the super() method. Like returning wrong length of the list can use the super().\_\_len\_\_() method to access the real length of the self object. 
 
 ## Links
 
