@@ -13,6 +13,8 @@ class NumString:
 		return float(self.value)
 
 	def __add__(self,other):
+		if '.' in self.value:
+			return float(self)+other
 		return int(self)+other
 
 	def __radd__(self,other):
@@ -20,3 +22,14 @@ class NumString:
 
 	def __iadd__(self,other):
 		return self + other
+
+	def __mul__(self,other):
+		if '.' in str(self.value):
+			return float(self)*other
+		return int(self)*other
+
+	def __rmul__(self,other):
+		return self * other
+
+	def __imul__(self,other):
+		return self * other

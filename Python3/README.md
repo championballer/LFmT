@@ -151,17 +151,18 @@ class Thief(Character):
 
 5. Sometimes it happens that MRO breaks down and is not able to pass variables to super or child classes properly. It is better to pass them explicitly and not with \*args. 
 
-6. isinstance('a',(str,bool,dict)) -> False, will return True if any one satisfies the condition (Searches the entire family tree)
-7. issubclass(bool,int) -> True
+### Internal methods
+1. isinstance('a',(str,bool,dict)) -> False, will return True if any one satisfies the condition (Searches the entire family tree)
+2. issubclass(bool,int) -> True
 
 ```python
 issubclass(Thief,Character) #->True
 ```
 
-8. type(object) tells the parent of the object. Using .\_\_name\_\_ returns the name of the class the instance belongs to. 
-9. \_\_class\_\_ returns the class which the instance belongs to whereas the \_\_name\_\_ attribute returns the class name.
+3. type(object) tells the parent of the object. Using .\_\_name\_\_ returns the name of the class the instance belongs to. 
+4. \_\_class\_\_ returns the class which the instance belongs to whereas the \_\_name\_\_ attribute returns the class name.
 
-10. There are other internal methods in python that are automatically available like \_\_str\_\_ which is the representation of the object when print is called. \_\_repr\_\_ to have the formal, real representation of the object and \_\_int\_\_ and \_\_float\_\_ to have the respective representations of the object. Can be worked on with something like NumString. To work with computation on a class, we need to define the arithmetic operations on it. 
+5. There are other internal methods in python that are automatically available like \_\_str\_\_ which is the representation of the object when print is called. \_\_repr\_\_ to have the formal, real representation of the object and \_\_int\_\_ and \_\_float\_\_ to have the respective representations of the object. Can be worked on with something like NumString. To work with computation on a class, we need to define the arithmetic operations on it. 
 
 ```python
 class NumString:
@@ -180,7 +181,50 @@ class NumString:
 		return "{}:{}".format(self.__class__.__name__,self.name)
 ```
 
-11. ```Emulating Numeric Types:```There are internal methods specified to add arithmetic operations to our classes. That include \_\_add\_\_(self,other) (These are order specific), \_\_radd\_\_ (Reflected add, if the normal add doesn't work then we pass reflected arguments to this to perform add in a different way)(both add and radd receive self first and then the other input), \_\_iadd\_\_ (Inplace add, +=1). There are other methods for division and all in arithmetic operations and can be looked at whenever required. https://docs.python.org/3/reference/datamodel.html?#object.__mul__
+6. ```Emulating Numeric Types:```There are internal methods specified to add arithmetic operations to our classes. That include \_\_add\_\_(self,other) (These are order specific), \_\_radd\_\_ (Reflected add, if the normal add doesn't work then we pass reflected arguments to this to perform add in a different way)(both add and radd receive self first and then the other input), \_\_iadd\_\_ (Inplace add, +=1). There are other methods for division and all in arithmetic operations and can be looked at whenever required. https://docs.python.org/3/reference/datamodel.html?#object.__mul__
+
+7. `Wrapper over iterables:` \_\_len\_\_, \_\_contains\_\_(works with bool returning (item in list)), \_\_iter\_\_(used to iterate over the iterable(item in list))
+
+```python
+class Inventory:
+
+	def __init__(self):
+		self.slots = []
+
+	def add(self,item):
+		self.slots.append(item)
+
+	def __len__(self):
+		return len(self.slots)
+
+	def __contains__(self,item):
+		return item in self.slots
+
+	def __iter__(self):
+		yield from self.slots
+```
+
+```python
+from item import Item, Weapon
+from inventory import Inventory
+
+knife = Weapon('knife','sharp',20)
+print(knife)
+inv1 = Inventory()
+print(len(inv1))
+inv1.add(knife)
+print(len(inv1))
+print(knife in inv1)
+
+dagger = Weapon('dagger','Lethal',25)
+inv1.add(dagger)
+
+sword = Weapon('sword','Fatal',50)
+inv1.add(sword)
+
+for item in inv1:
+	print(item)
+```
 
 ## Links
 
