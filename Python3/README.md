@@ -361,6 +361,9 @@ cars = vehicle_factory(Car, 50)
 vans = vehicle_factory(Van, 10)
 motorcycles = vehicle_factory(Motorcycle, 100)
 ```
+## Conventions
+
+1. PEP - Python Enhancement Proposal, being an opensource language python allows users and contributers to submit proposals to make the language better and more available. Two imp. PEPs are 8 and 20.
 
 ## Links
 
