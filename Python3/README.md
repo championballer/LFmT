@@ -339,3 +339,4 @@ class Product:
 1. https://www.digitalocean.com/community/tutorials/how-to-use-args-and-kwargs-in-python-3
 2. http://python-history.blogspot.com/2010/06/method-resolution-order.html
 3. https://docs.python.org/3/reference/datamodel.html?#object.__mul__
+4. https://attrs.readthedocs.io/en/stable/
