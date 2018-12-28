@@ -265,6 +265,75 @@ class JavaScriptObject(dict):
 ```
 We can modify the preset methods of base objects using the super() method. Like returning wrong length of the list can use the super().\_\_len\_\_() method to access the real length of the self object. 
 
+9. Class Methods
+
+```python
+class Thingy:
+    def __init__(self, data=None):
+        # set attributes based on data
+
+    @classmethod
+    def data_from_txtfile(cls, file):
+        # validate file exists
+        # data = data read from file
+        # return instance of class created from data
+        return cls(data=data)
+
+    @classmethod
+    def data_from_excelfile(cls, file):
+        # validate file exists
+        # parse file / create pandas dataframe
+        # data = some data from parse or dataframe
+        # return instance of class created from data
+        return cls(data=data)
+
+    @classmethod
+    def data_from_csvfile(cls, file):
+        # validate file exists
+        # do stuff to the csv
+        # data = some data from csv file
+        # return instance of class created from data
+        return cls(data=data)
+```
+
+classMethods operate on the entire class rather than an instance of the class and is a way to use any function to instantiate objects for the class. 
+
+10. There are ways to make attributes and methods in python. Using '\_' and '\_\_' before the name of the attribute or method are good ways to go about it. '\_\_' brings in name mangling by adding Protected in front of the attribute or method. Adding that to the attribute or method can be used to access.
+
+11. There are ways to make functions act as attribute using property mechanism. We can set the property using @property.setter. The properties are accessed using dot notation. And work with 'Attribute Errors'
+
+```python
+class Rectangle:
+    def __init__(self, width, length):
+        self.width = width
+        self.length = length
+        
+    @property
+    def area(self):
+        return self.length*self.width
+    
+    @property
+    def perimeter(self):
+        return self.length*2+self.width*2
+
+```
+
+```python
+class Product:
+    _price = 0.0
+    tax_rate = 0.12
+  
+    def __init__(self, base_price):
+        self._price = base_price
+    
+    @property
+    def price(self):
+        return self._price + (self._price * self.tax_rate)
+
+    @price.setter
+    def price(self,price):
+        self._price = price
+```
 ## Links
 
 1. https://www.digitalocean.com/community/tutorials/how-to-use-args-and-kwargs-in-python-3
