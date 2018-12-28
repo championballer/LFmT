@@ -12,6 +12,6 @@ print(int(d2))
 print(6+d2)
 print(d2>3)
 
-h1 = Hand(4,d2)
+h1 = Hand(4,D6)
 print(h1)
 print(h1[0].value)

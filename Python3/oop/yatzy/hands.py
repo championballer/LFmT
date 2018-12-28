@@ -5,4 +5,5 @@ class Hand(list):
 		super().__init__()
 
 		for _ in range(size):
-			self.append(class_name)
+			self.append(class_name())
+

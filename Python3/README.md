@@ -334,6 +334,34 @@ class Product:
     def price(self,price):
         self._price = price
 ```
+
+12. Functions and classes are first-class citizens in Python which means we can pass them around and use them as values just like we would any other variable. That means we can point a variable or parameter at a class or function and then call that variable just like we would the original class. Here's another example:
+
+```python
+class Car:
+    pass
+
+
+class Van:
+    pass
+
+
+class Motorcycle:
+    pass
+
+
+def vehicle_factory(cls, count):
+    for _ in range(count):
+        yield cls()
+```
+Now we could make any number of Car, Van, or Motorcycle instances that we want (and, notice, it's a generator function since we're using yield; if our vehicle manufacturing required a lot of memory, we could still be polite to other processes and not tie up all of the RAM with our factory). 
+
+```python
+cars = vehicle_factory(Car, 50)
+vans = vehicle_factory(Van, 10)
+motorcycles = vehicle_factory(Motorcycle, 100)
+```
+
 ## Links
 
 1. https://www.digitalocean.com/community/tutorials/how-to-use-args-and-kwargs-in-python-3
