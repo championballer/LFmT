@@ -27,8 +27,8 @@ class Die:
 		return int(self)+other
 	def __radd__(self,other):
 		return self+other
-	def __str__(self):
-		return str(int(self))
+	def __repr__(self):
+		return str(self.value)
 
 class D6(Die):
 
