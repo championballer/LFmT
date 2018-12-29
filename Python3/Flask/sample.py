@@ -7,6 +7,11 @@ def helper(name="Shiv"):
 	name = request.args.get('name',name)
 	return "Hello {}".format(name)
 
+
+@app.route('/multiply/<int:num1>/<int:num2>')
+def multiply(num1,num2):
+	return str(num1*num2)    
+
 #Decorator	
 @app.route('/')
 def func(name="Shiv"):
