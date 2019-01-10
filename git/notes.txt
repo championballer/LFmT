@@ -1,0 +1,227 @@
+Video 2
+
+git commands won't work outside a Git repo.
+Whenever you exit a repo directory, be sure to change back into the directory with cd before issuing any Git commands.
+We've initialized a Git repository in our project's directory. But our project files haven't been added to the repository yet. In fact, Git has no idea they exist! In this video, we're going to fix that, by staging and then committing these files.
+
+Our project directory is known in Git terminology as the working directory, because it's the directory where we actually edit and do other work on our files. Right now our working directory contains two files, medals.html and bronze.html, that haven't been added to Git.
+
+File statuses
+There are three states every file goes through in a Git repository.
+
+When you make changes to a file in the working directory, it's "modified".
+You don't necessarily want to include all of these modified files in your next commit, so you need to specify which ones you will include. You do this by adding files to the index, more commonly known as the "staging area" or "cache". The staging area is where you place the files you're going to commit. Files you've added to the index are referred to as "staged" files.
+When you've staged all the files you want, you make a commit, and that's when the files are actually added to your Git repository.
+Then, when you next make a change to any of those files, they're treated as "modified" again. You can stage and commit the files again to save a new version of them. And the cycle repeats.
+About git status
+We can find out what state our project files are in, using the git status command.
+Its output includes a list of "untracked files". These are files that Git isn't "tracking" yet - it's not keeping track of changes to them so we're not saving new versions of them.
+Its output also includes helpful messages suggesting commands to run next.
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#       medals.html
+#       bronze.html
+nothing added to commit but untracked files present (use "git add" to track)
+Staging files
+Let's try the suggested command:
+git add medals.html
+There's no output from the command, which is actually a good thing. Many Git commands produce output only when there's an error. Empty output means "everything went fine".
+The git add command adds a file to the staging area, the place we compose our commit.
+Now, let's try running git status again, to see if that's changed.
+The output is now in two sections.
+There's a new "Changes to be committed" section, which lists files in the staging area. That list consists of one file right now, medals.html.
+The "Untracked files" section looks much the same as before, except that now it only includes bronze.html.
+Committing files
+We use the git commit command to commit our staged changes.
+You need to provide a message to go with every commit, a brief note explaining what the commit does.
+We do this with the -m option. -m should be followed by a string in quotation marks. Since this commit adds medals.html, we'll use a message of "Add main site page".
+git commit -m "Add main site page"
+As a rule of thumb, a commit message should complete the phrase "This commit will:"
+"This commit will: Add main site page"
+"This commit will: Remove sale description"
+"This commit will: Add new products", etc.
+Git configuration
+Run the git commit ... command, and we'll see an error.
+In addition to a commit message, Git needs to know your name and e-mail address so it can attach them to the commit.
+This is another of Git's collaboration features. It allows other people working on the project to contact you if they need to ask about the commit.
+The name and e-mail address are permanently stored as part of Git's configuration. The git config command allows you to add and edit values in that configuration.
+Let's run the commands it suggests:
+git config --global user.email "jay.mcgavren@teamtreehouse.com"
+git config --global user.name "Jay McGavren"
+Completing the commit
+Now, with a user name and email stored, I should be able to make a commit successfully.
+Most shells keep a history of commands you've entered. You can hit the up arrow key to bring up previous commands, so you don't have to type them again.
+This isn't a feature of Git, it's a feature of the shell itself.
+Hit the up arrow until the git commit command is active, and then hit Enter to re-run it.
+This time, we'll see a message confirming the commit.
+Using an editor for commit messages
+If you leave off the -m command line option when running git commit, Git will launch a text editor so you can enter a commit message.
+Git launches the text editor with a pre-formatted file, with an empty line at the top for you to type your commit message, and some comments below that explaining what to do.
+We've set up Workspaces to use a text editor called nano for editing Git messages.
+With nano, you just type your message normally: "Add main site page"
+Next, we need to save the file and exit the editor.
+nano displays commands you can run across the bottom of the screen.
+The carat (^) character stands for the Ctrl key. So Ctrl-G will "Get Help", Ctrl-O will write out the file, etc.
+We want to press Ctrl-o to write out the file.
+The file name has already been set up for us, so we should just press Enter to accept the existing file name.
+Then we can press Ctrl-x to exit the editor.
+When the editor exits, Git will read your commit message from the saved file, and use that to complete the commit.
+This gives us the same result as if we had used the -m option to git commit.
+On other systems, Git uses an editor named vi by default.
+
+How to change your default editor
+An Extremely Quick and Simple Introduction to the Vi Text Editor
+Viewing Git logs
+Once a commit is complete, it's a permanent part of the repository's history.
+You can review that history with the git log subcommand.
+For each commit, git log shows the:
+Author name and e-mail
+Date and time of the commit
+The commit message
+If you want, you can add the -p option to git log: git log -p. Then git log will show the lines that were added in each file.
+Anytime a git command shows output that's too long for the screen, it will show that output using a pager program. You can use the up and down arrow keys to scroll through the output, and press the q key when you're ready to quit back to the shell prompt.
+More options
+Those are the basics of the git add and git commit commands. You can do almost anything with what we've already shown you, but there are additional options with git add and git commit that can make it easier to work with large numbers of files. See the teacher's notes if you'd like to learn more.
+
+If you pass a directory name to git add, it will stage all the files that directory contains: git add mydir
+You can specify the current directory with .. So git add . will stage all files in the current directory, and all its subdirectories.
+You can stage changes to all tracked files (files you've added in a previous commit) with the -a option to git commit. So if you've changed two files that are already tracked, you can stage and commit the changes in a single command with git commit -a -m "My message". (This can also be shortened to git commit -am "My message".)
+To prevent accidentally committing the wrong files, the -a option does not add "untracked" files; files that have never been committed before. You'll need to stage those with git add first.
+Note: The code challenges for this course want you to stage and commit files using separate commands, so you won't be able to use -a in code challenges.
+
+Video 3
+
+We've committed our first version of medals.html to our repository. But medals.html doesn't include a link to bronze.html right now, so users of the site will have no way to find that page. We'll need to edit medals.html to add that link, and commit those changes as well.
+
+Add the following code to medals.html:
+
+  <div>
+    <a href="bronze.html">Bronze medals</a>
+  </div>
+Be sure to save your changes after editing the file.
+Don't worry if you don't understand all that. If you want, you can learn more about HTML in this course.
+Now, we need to commit our changes to the file.
+
+We've modified the medals.html file. Let's see what its status is, with the git status command: git status
+There's a new section, "Changes not staged for commit". This is where changes to tracked files will appear.
+Our medals.html file is in that section, listed as "modified".
+$ git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#       modified:   medals.html
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+We can see a helpful message in the output telling us what to do next: 'use "git add ..." to update what will be committed'.
+So, let's run the command git add medals.html.
+git add doesn't just add untracked files to the staging area. It also stages the changes within tracked files.
+If we run git status again, we'll see the modified medals.html is now listed under the "Changes to be committed" section. We've staged the changes to be committed.
+$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       modified:   medals.html
+#
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        bronze.html
+But we can also see that bronze.html, the file our change refers to, is down in the "Untracked files" section.
+So, as the helpful message in the "Untracked files" section says, we'll run git add to add bronze.html to the staging area: git add bronze.html
+Let's run git status again:
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       modified:   medals.html
+#       new file:   bronze.html
+Now both files are in the "Changes to be committed" section, medals.html as "modified" and bronze.html as a "new file".
+Now we can commit them both at once: git commit -m "Add bronze medals"
+Now that the commit is complete, we can run git status...
+And it will show us that we have no modified files, and no untracked files.
+It says the working directory is "clean", meaning it doesn't have any changes that aren't also in the Git repository. Everything is committed!
+$ git status
+# On branch master
+nothing to commit, working directory clean
+Only Staged Files Are Committed
+Sometimes you'll have multiple modified files, but you won't want to commit all of them.
+
+Suppose I had added copyright info to the medals.html file, and marketing text to the bronze.html file:
+
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+(use "git add <file>..." to update what will be committed)
+(use "git checkout -- <file>..." to discard changes in working directory)
+
+modified:   bronze.html
+modified:   medals.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+The two changes are totally unrelated. It would probably be best to handle them as two separate commits. But if all modified files were always committed, that wouldn't be possible. I'd have to undo changes to one file before I could make a commit.
+
+But that's why Git has a staging area. It allows you to select individual modified files to be part of a commit, while leaving other modified files to be part of a separate commit.
+
+That means that if I want, I can stage and commit only the bronze.html file:
+
+$ git add bronze.html
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+(use "git reset HEAD <file>..." to unstage)
+
+modified:   bronze.html
+
+Changes not staged for commit:
+(use "git add <file>..." to update what will be committed)
+(use "git checkout -- <file>..." to discard changes in working directory)
+
+modified:   medals.html
+
+$ git commit -m "Add marketing text"
+[master 6e93661] Add marketing text
+1 file changed, 2 insertions(+)
+Because the medals.html file isn't staged, it will be left out of the commit and left in a "modified" state:
+
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+(use "git push" to publish your local commits)
+
+Changes not staged for commit:
+(use "git add <file>..." to update what will be committed)
+(use "git checkout -- <file>..." to discard changes in working directory)
+
+modified:   medals.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Then I can stage medals.html and make it part of a separate commit:
+
+$ git add medals.html
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+(use "git push" to publish your local commits)
+
+Changes to be committed:
+(use "git reset HEAD <file>..." to unstage)
+
+modified:   medals.html
+
+$ git commit -m "Add copyright info"
+[master c9ac1a0] Add copyright info
+1 file changed, 1 insertion(+)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+(use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
