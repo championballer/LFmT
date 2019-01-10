@@ -1,3 +1,5 @@
+# Git
+
 1. Git is a version control system. It helps you control the different versions of the files in your project.
 2. The collection of all the old versions of your project's files is known as a Git repository. It's basically just a folder in which you can edit your files, then run Git commands to store your changes.
 3. Each time you complete a change to some or all of your project's files, you can take a snapshot of their current contents. These snapshots are known as commits.
