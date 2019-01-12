@@ -30,5 +30,8 @@ Topics covered:
 2. Remote repos
 3. How to push and pull to remote repos
 4. Remote repos on the same machine
-5. 
+5. Good practices
+6. Git hosting services and how to collaborate
+7. Branching 
+8. Merging 
 
