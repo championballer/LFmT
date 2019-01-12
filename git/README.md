@@ -25,3 +25,10 @@ There are three states every file goes through in a Git repository.
 3. When you've staged all the files you want, you make a commit, and that's when the files are actually added to your Git repository.
 4. Then, when you next make a change to any of those files, they're treated as "modified" again. You can stage and commit the files again to save a new version of them. And the cycle repeats.
 
+Topics covered:
+1. Basic commands 
+2. Remote repos
+3. How to push and pull to remote repos
+4. Remote repos on the same machine
+5. 
+
