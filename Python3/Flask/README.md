@@ -40,4 +40,11 @@ def index(name="Shiv"):
 _We can also work with redirection in views as normal functions work._\
 _Views can have multiple routes_
 
+
+```python
+@app.route('/add/<int:num1>/<int:num2>')
+@app.route('/add/<float:num1>/<float:num2>')
+def add():
+	return "{} + {} = {}".format(num1,num2,num1+num2)
+```
 Anything captured in a route argument will be a string unless we specify another type, so be careful with how you use the values. You can have multiple route arguments, too.
