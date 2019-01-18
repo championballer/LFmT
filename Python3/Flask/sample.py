@@ -3,7 +3,7 @@ from flask import request
 
 app = Flask(__name__)
 
-def helper(name="Shiv"):
+def helper(name="Agrima"):
 	name = request.args.get('name',name)
 	return "Hello {}".format(name)
 
@@ -15,7 +15,7 @@ def multiply(num1,num2):
 #Decorator	
 @app.route('/')
 def func(name="Shiv"):
-	return helper("Agrima")
+	return helper()
 	#name = request.args.get('name',name)
 	#return "Hello from {}, this is sample".format(name)
 
