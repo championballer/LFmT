@@ -37,6 +37,6 @@ def index(name="Shiv"):
 	return "Hello {}".format(name)
 ```
 
-_We can also work with redirection in views as normal functions work._
-_Views can have multiple routes_
+_We can also work with redirection in views as normal functions work._\n
+_Views can have multiple routes_\n
 Anything captured in a route argument will be a string unless we specify another type, so be careful with how you use the values. You can have multiple route arguments, too.
