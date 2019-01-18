@@ -48,3 +48,32 @@ def add():
 	return "{} + {} = {}".format(num1,num2,num1+num2)
 ```
 Anything captured in a route argument will be a string unless we specify another type, so be careful with how you use the values. You can have multiple route arguments, too.
+
+Working with plain string is okay, but we want to be able to send in html code that can be rendered by the browser and that is done using render_template object imported from flask. The template needs to be in the template folder that is in the local project directory. It is also possible to work with triple quotes instead of the template as triple quotes allow line breaks in the string, and hence html can be typed into it.
+
+```python
+from flask import render_template
+
+@app.route('/add/<int:num1>/<int:num2>')
+def index(num1=5,num2=5):
+	return render_template('add.html',num1=num1,num2=num2)
+```
+
+The arguments to the function after the path to the template file is in the form of key value pairs and hence expanded dictionary can also be sent here(\*\*args). To create placeholders for these arguments we need to use {{}} in the template, since Flask using Jinja2, and their templating works like this.
+
+We can avoid writing a lot of repetitive code in templates used in flask rendering by using template inheritance.  
+
+```html
+<--
+layout.html
+-->
+<!doctype html>
+<html>
+<head><title>{%block title%}{%endblock%}</title></head>
+<body>
+{%block content%}{%endblock%}
+</body>
+</html>
+```
+
+
