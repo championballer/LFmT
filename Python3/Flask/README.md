@@ -89,3 +89,44 @@ Three main inheritance tags perse are {%block%} (needs to be closed as done abov
 
 We can include CSS, Javascript and Image files by referring to them in the templates files in the /static folder. Flask provides us the convenience to refer to the static folder of the project using /static. They can be added to inheriting templates as required. Normal rules apply here as well. 
 
+Working with forms in flask. url_for(view name)(needs to imported from flask) gives the URL for the view and this can be used to access that view post a redirect or a form action. 
+
+```html
+<form action={{url_for('save/')}} method='POST'>
+```
+
+And also we might need to redirect post some action hence we need to import too. We also need to mention at the view for which methods its fetching is allowed. All others will be not allowed.
+
+```python
+@app.route('save/',methods=['POST'])
+def save():
+	return redirect(url_for('index'))
+```
+
+The data from the request that is sent from the form is in request.form data structure which happens to be a immutablemultidict.
+
+Cookies is a way of storing data b/w requests.  It can be used to store data our users submit to the form. It can also be defined as the bits of data that our browser lets site store on our computer. Here we store in json format(need to import json for this, use of .loads() and .dumps()) . The thing about cookies in Flask is that it is set on response and we till now we did not generate a response till return. So we need to generate a false response to set our cookie on and that is done using make_response (generates the entire response object that will be sent back to the client, but lets us store it in a variable for further manipulation like seting a cookie here). The arguments to the make_response is the original returned string. Once the response object is there then we can set cookie using set_cookie(). Here the arguments are the cookie name and its value. We use json.dumps(dict(request.form.items())) here as the value which will be stored in data cookie which will be extracted back to be used in index using the get_saved_data function and the character_name label will already be set if already set by the user.
+To get access to the character cookie we use the request.cookies.get(cookie name) function. The data comes out as output by json.loads which is fed the data as stored in the cookie. The dict key will be the name of the input tag in the index.html and we need to store that in the value attribute in our main html file. as in value = {{saves.get('name','')}}
+Also here we are checking if the cookie is already present or not since we donot want to overwrite the entire data point, but rather only change the updated values and that is what is happening here and that is a good practice in general.
+
+
+```python
+
+def get_saved_data():
+	try:
+		data = json.loads(request.cookies.get('character'))
+	except TypeError:
+		data = {}
+	return data
+
+def index():
+	data = get_saved_data()
+	return render_template('index.html',saves=data)
+
+def save():
+	response = make_response(redirect(url_for(index)))
+	data = get_saved_data()
+	data.update(dict(request.form.items()))
+	response.set_cookie('character',json.dumps(data))
+	return response
+```
