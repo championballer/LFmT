@@ -69,11 +69,23 @@ layout.html
 -->
 <!doctype html>
 <html>
-<head><title>{%block title%}{%endblock%}</title></head>
+<head><title>{%block title%} Flask Tutorials {%endblock%}</title></head>
 <body>
 {%block content%}{%endblock%}
 </body>
 </html>
 ```
 
+```html
+<--
+index.html
+-->
+{%extends 'layout.html' %}
+
+{%block title%} Main | {{super()}}{%endblock%}
+{%block content%} Hello {{}} {%endblock%}
+```
+Three main inheritance tags perse are {%block%} (needs to be closed as done above), {%extends%} in the extending document with base template as parameter. We can mention default content for blocks which will be used in case we donot specify something for the area in the extending template. There is a way to access this in case overriding, {{super()}}.
+
+We can include CSS, Javascript and Image files by referring to them in the templates files in the /static folder. Flask provides us the convenience to refer to the static folder of the project using /static. They can be added to inheriting templates as required. Normal rules apply here as well. 
 
