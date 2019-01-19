@@ -143,3 +143,21 @@ We can include python code templates in html.
 {% for x in y %}: This is the template version. This will cause the enclosed code to be run as many times as there are things in y. Has to be followed by {% endfor %}.
 
 {% if %}: The template version of Python's if condition. Closed with {% endif %}.
+
+{% with %}: The Flask template version of Python's with block. Let's us temporarily define a variable. Must be closed with {% endwith %}.
+
+```python
+{% with messages = get_flash_messages() %}
+{% if messages %}
+	<ul>
+	{% for message in messages %}
+		<li>{{message}}</li>
+	{% endfor %}
+	</ul>
+{% endif}
+{% endwith %}
+```
+
+Flash messages are used to share messages to the user for a single session(till the time window isn't refreshed or redirected), after which it self destructs. For using it we need to import it from flask. (import flash). We also need to work with app.secret_key since sessions in flask are cryptographically signed. They won't be printed automatically and need to retrieved in the html as shown above.
+
+Basics of flasks are done here, and now it can be deployed on Heroku (happens to be very easy for Flask)
