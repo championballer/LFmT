@@ -130,3 +130,16 @@ def save():
 	response.set_cookie('character',json.dumps(data))
 	return response
 ```
+
+We can include python code templates in html. 
+
+```python
+{% for color in options['colors']%}
+<input type="radio" id="{{color}}" name="colors" value="{{color}}" {%if saves.get('colors') == color %} checked{%endif%}>
+<label for="{{color}}"></label>
+{% endfor %}
+```
+
+{% for x in y %}: This is the template version. This will cause the enclosed code to be run as many times as there are things in y. Has to be followed by {% endfor %}.
+
+{% if %}: The template version of Python's if condition. Closed with {% endif %}.
