@@ -30,6 +30,12 @@ To go back to the original config in local repo after making modifications. We c
 
 Commit SHAs and undoing commits : A commit is represented using the SHA-1 checksum of all the changes made in that commit. It looks something like this "1d8e15a834a2157fe7af04421c42a893e8a1f23a". This checksum obviously uniquely identifies a commit. These are used to select commits whenever needed. Git allows us to abbreviate SHAs with the first 5 symbols of the SHA. We can use ``` git revert commitSHA ``` to undo changes made in that commit. HEAD refers to the most recent commit. So ```git revert HEAD ``` undoes the last changes made to the repo. 
 
+Working with other developers using git : Concept of local, remote and central repos. Our own copy of the repo is called local repo. Repos belonging to other developers are called remote repos. It is very common practice to declare one repo as the central repo where all work is synced and from other developers can pull changes from and push changes to. Rather than pushing and pulling individually to other repos, this happens to be much more convenient but that does not mean the other way round isn't possible. But this concept of central repos is central to the idea of many git hosting services like github, bitbucked and gitlab. 
+
+To pull changes from a remote repo, it is important for it to be set up or linked to our repo. These linked repos are called remote repos. To list all linked repos we need to go with ```git remote``` . The repo we clone from is automatically added by the name of origin (The reverse is not true). We do git pull origin to pull changes from origin to our repo. 
+
+To add a remote repo, we use ```git remote add name_to_given_to_the_remote_repo remote_repo_URL ```. To pull from this repo we need to specify two commands. The remote reference and the branch to pull from.
+
 
  
 **Note:** Atlasian has very good tutorials on git.
