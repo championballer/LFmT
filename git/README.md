@@ -11,7 +11,7 @@ The most command git commands are :
 3. git add : Used to add files to the staging area
 4. git commit : Used to commit files to the repo's version history. It is mandatory to add a message with each commit, more of a brief note to state what the commit is doing. We can either use the -m option to do it in command line in the same command itself by hitting a message in quotes or leave the option and move into vi or any default editor set for git.
 5. git log : Shows the history of the project files. For each commit it shows the author name and email. Date and time of the commit. The commit message. -p would show the lines changed in the commit as well.
-6. git mv/git rm
+6. git mv/git rm : Moving or removing a file in the repo with the git, adds the changes directly to the staging area and will be needed to be commit after that. Without git executable, we need to separately add them to the staging area and then the commit area. 
 7. git push/git pull
 8. git diff : Allows us to look at the difference between the modified files and files in the staging area, and if staging area is empty then we get comparison with the last made commit. - for deleted lines, ++ for new added line and both - and + for modified lines with both versions. Has --staged option. If we have staged our changes, then there are no changes between the modified and the staged version and the diff commands returns empty. But if we want to compare the staged version with the last commit, then we use this flag. 
 For files that are already tracked by git. git commit -a -m "message" stages and commits all files in the directory in one command. 
@@ -24,6 +24,15 @@ git config --global user.email "jay.mcgavren@teamtreehouse.com"
 git config --global user.name "Jay McGavren"
 ```
 
+Unstaging commits : To unstage commits we need to run the command ```git reset HEAD filename``` . This command will move the file from staging area back to to be staged area. Also doesn't really need to be remembered. Git will help us with that. 
+
+To go back to the original config in local repo after making modifications. We can use ```git checkout -- filenames```. Takes them out of the modification area or in a way removes them entirely from the directory. This can't be undone. It is really moving files back to their last committed versions. Here -- acts as a seperator and not an option. git checkout works with deleted files as well, as long as they were tracked or were part of the repo before.
+
+Commit SHAs and undoing commits : A commit is represented using the SHA-1 checksum of all the changes made in that commit. It looks something like this "1d8e15a834a2157fe7af04421c42a893e8a1f23a". This checksum obviously uniquely identifies a commit. These are used to select commits whenever needed. Git allows us to abbreviate SHAs with the first 5 symbols of the SHA. We can use ``` git revert commitSHA ``` to undo changes made in that commit. HEAD refers to the most recent commit. So ```git revert HEAD ``` undoes the last changes made to the repo. 
+
+
+ 
+**Note:** Atlasian has very good tutorials on git.
 Topics covered:
 1. Basic commands 
 2. Remote repos
