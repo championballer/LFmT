@@ -7,9 +7,9 @@ Git commands function with the git executable in the command line. And is follow
 The most command git commands are : 
 ```
 1. git init/git clone : To setup repositores
-2. git status: 
-3. git add 
-4. git commit 
+2. git status: Used to find what state our project files are in. It lists all untracked files as well, and also provides hints for the commands that can be used next.
+3. git add : Used to add files to the staging area
+4. git commit : Used to commit files to the repo's version history. It is mandatory to add a message with each commit, more of a brief note to state what the commit is doing. We can either use the -m option to do it in command line in the same command itself by hitting a message in quotes or leave the option and move into vi or any default editor set for git.
 5. git log
 6. git mv/git rm
 7. git push/git pull
