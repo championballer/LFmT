@@ -36,7 +36,7 @@ To pull changes from a remote repo, it is important for it to be set up or linke
 
 To add a remote repo, we use ```git remote add name_to_given_to_the_remote_repo remote_repo_URL ```. To pull from this repo we need to specify two commands. The remote reference and the branch to pull from.
 
-
+Git push can be used to push the changes we make to git hosting services. To push changes we need to make a new repo on github and set it up as a remote for our local repo. ```git push -u origin master``` is the command used to push to the central repo. -u option is to set this repo as upstream with branch master. In the future we can just specify git push and it will push to origin automatically. Other people won't be able to push to our repo until they fork it and push to that and then initiate a pull request. 
  
 **Note:** Atlasian has very good tutorials on git.
 Topics covered:
