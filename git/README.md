@@ -62,16 +62,4 @@ When we setup the repo on github and then setup origin as the remote repo for ou
 
 Sometimes, reviews can take a long time and by that time the repo could move ahead with other changes. Hence it is important to move those changes to our branch and look out for conflicts and then merge our branch to master and to push then.
 
-
-
 **Note:** Atlasian has very good tutorials on git.
-Topics covered:
-1. Basic commands 
-2. Remote repos
-3. How to push and pull to remote repos
-4. Remote repos on the same machine
-5. Good practices
-6. Git hosting services and how to collaborate
-7. Branching 
-8. Merging 
-
