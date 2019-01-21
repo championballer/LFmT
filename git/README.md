@@ -56,6 +56,14 @@ Remote branch is like a local branch, but points to the commit that a branch in 
 
 If we add a new branch to our local repo, quite obviously it does not get added to the remote repo and their is no default tracking branch. If we want to push these changes to the remote repo, we can go with ```git push -u origin more-letters```. This will add the branch on the remote repo even if it isn't present already. To push to a remote repo, since their is no upstream originally we need to mention the remote repo name and the branch name. The -u option adds it as upstream post that. From then on, if this branch is checked out in the remote then the pushed changes won't work automatically. Deleting a remote branch can also be done. An important thing to remember is that if we want to make any changes to remote repos we need to push these changes. Therefore to delete a branch on the remote repo we use the command ```git push --delete origin more-letters```.
 
+## Remote branches and Github
+
+When we setup the repo on github and then setup origin as the remote repo for our local repo. We are doing it for master branch. We can do the same when the repo is init setup on github by checking out on that branch and then pushing to the repo. ```git push -u origin add-letters```. After this we need to know what a PR is. A PR or pull request is a chance to discuss the changes proposed by one developer on the project and this discussion could be on new introduced bugs, or style inconsistencies or conflicts. To review a PR, the reviewer can go to their clone and fetch to get the branch off which the PR is based off. Differences can be seen and compilation and other tests can be run. After any required changes, it can be approved, post which it can be merged. 
+
+Sometimes, reviews can take a long time and by that time the repo could move ahead with other changes. Hence it is important to move those changes to our branch and look out for conflicts and then merge our branch to master and to push then.
+
+
+
 **Note:** Atlasian has very good tutorials on git.
 Topics covered:
 1. Basic commands 
