@@ -2,6 +2,10 @@
 
 This repository contains code and info about the GOlang.
 
+Go is a statically typed, compiled programming language designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. Go is syntactically similar to C, but with the added benefits of memory safety, garbage collection, structural typing, and CSP-style concurrency. 
+
+Builds for many langs are really inefficient as some header files get loaded multiple times when building a large program. It is possible for a library to be compiled and to be included in our code even if it is completely un-necessary. Google suffered from these exact problems as builds took half an hour for even minor changes since their source code was so large. So they decided to come up with a new language which some goals in mind like : fast build, fast execution, concurrency and garbage collection. 
+
 ## Goals for Go:
 
 * Fast builds
