@@ -1,0 +1,1 @@
+Details what I learnt in React. Meant to act as base documentation for revision purposes.
