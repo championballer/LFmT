@@ -9,7 +9,7 @@ class Student(Model):
 	class Meta:
 		database = db
 
-Students = [{
+students = [{
 	'username' : 'Shiv',
 	'points' : 247,
 	},
@@ -28,7 +28,7 @@ Students = [{
 ]
 
 def add_students():
-	for student in Students:
+	for student in students:
 		try:
 			Student.create(username= student['username'],points=student['points'])
 		except IntegrityError:
