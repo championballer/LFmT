@@ -1,4 +1,4 @@
-# python3
+l# python3
 
 This repository contains code written while picking up python. It will contain major components that go into learning a general purpose language and this readme is supposed to act like a cheatsheet to remember the important as well as unique components of python that will enable picking and repicking it in very efficient manner.
 
@@ -365,6 +365,9 @@ motorcycles = vehicle_factory(Motorcycle, 100)
 
 1. PEP - Python Enhancement Proposal, being an opensource language python allows users and contributers to submit proposals to make the language better and more available. Two imp. PEPs are 8 and 20.
 
+## Serialisation
+
+1. Data structures can be stored in serialised way to be utilised by other scripts. This can be a way of deploying machine learning models.  
 ## Links
 
 1. https://www.digitalocean.com/community/tutorials/how-to-use-args-and-kwargs-in-python-3
