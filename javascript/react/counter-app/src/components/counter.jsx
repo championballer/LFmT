@@ -16,14 +16,14 @@ class Counter extends Component{
 
 	spanClasses = () => {
 		let classes = "badge m-2";
-		if(this.props.counter.value===0)
+		if(this.props.counter.value!==0)
 		{
 			classes+=" badge-primary";
 		}
 
 		else
 		{
-			classes+=" bagde-warning";
+			classes+=" badge-warning";
 		}
 
 		return classes;
