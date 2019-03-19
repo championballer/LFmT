@@ -1,59 +1,49 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react'
 
 class Counter extends Component{
-
 	state = {
-		count : 0,
-		tags : ['tag1','tag2','tag3']
-	};
-
-
-	styles = {
-		backgroundColor: 'blue',
-		fontSize : 30
+		count:this.props.value
 	}
 
-	handleIncrement = (product) => {
+	handleIncrement = () => {
 		this.setState({count:this.state.count+1});
-		console.log(product);
 	}
 
-	render () {
-		return (
-			<div>
-				<span className = {this.getBadgeClasses()}>{this.countFunc()}</span>
-				<button onClick = { () => {
-					this.handleIncrement({id:1})
-				}} style = {this.styles} className = "btn btn-secondary btn-sm">Increment</button>
-			</div>
-		);
-	}
-
-	getBadgeClasses(){
-		let classes = "badge m-2";
+	renderCount = () => {
 		if(this.state.count===0)
 		{
-			classes+=" badge-warning";
+			return "Zero";
 		}
 
 		else
 		{
+			return this.state.count;
+		}
+	}
+
+	spanClasses = () => {
+		let classes = "badge m-2";
+		if(this.state.count===0)
+		{
 			classes+=" badge-primary";
+		}
+
+		else
+		{
+			classes+=" bagde-warning";
 		}
 
 		return classes;
 	}
 
-	countFunc(){
-		if(this.state.count===0)
-		{
-			return "Zero";
-		}
-		else
-			return this.state.count;
+	render(){
+		return (
+			<div>
+			<span className={this.spanClasses()}>{this.renderCount()}</span>
+			<button className="btn btn-secondary btn-sm" onClick={this.handleIncrement}>Increment</button>
+			</div>
+			);
 	}
 }
-
-
 
 export default Counter;
