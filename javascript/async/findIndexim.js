@@ -1,24 +1,20 @@
-function findIndex(arr,callback){
+function findIndex(arr,callback)
+{
 	for(let i=0;i<arr.length;i++)
 	{
-		if(callback(arr[i],i,arr)===true)
+		if(callback(arr[i],i,arr))
 		{
-			console.log(i);
-			return;
+			return i;
 		}
 	}
 
-	console.log(-1);
-	return;
+	return -1;
 }
 
-let arr = [1,2,3,4,5];
-let strarr = ["Java","C","C++","Python"];
-findIndex(arr,(item,index,arr)=>{
-	return item%2===0;
-});
+const arr = [1,2,3,4];
 
-findIndex(strarr,(str)=>{
-	return str==="Python";
-})
-
+console.log(findIndex(arr,(element)=>{
+	if(element%2===0)
+		return true;
+	else return false;
+}));

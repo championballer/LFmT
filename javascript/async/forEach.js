@@ -1,15 +1,17 @@
-let arr = ["my","forEach","Call"];
+const arr = ["for","Each","Used"];
 
 let output = "";
+
 arr.forEach((str,index,arr)=>{
-	if(index!==arr.length-1)
+
+	if(index===arr.length-1)
 	{
-		output+=arr[index];
+		output+=(str+"!!!");
 	}
 
 	else
 	{
-		output+=(arr[index]+"!!!");
+		output+=str;
 	}
 })
 
