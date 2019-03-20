@@ -1,4 +1,9 @@
 let btn = document.querySelector("#btn");
+let email = document.querySelector("#email");
+let city = document.querySelector("#city");
+let avatar = document.querySelector("#avatar");
+let fullname = document.querySelector("#fullname");
+let username = document.querySelector("#username");
 
 function handleErrors(res){
 	if(!res.ok)
@@ -16,7 +21,13 @@ function parseJSON(res)
 
 function updateProfile(data)
 {
-	console.log(data);
+	let current = data.results[0];
+	email.innerText = current.email;
+	city.innerText = current.location.city;
+	avatar.src = current.picture.medium;
+	fullname.innerText = current.name.first + " " +current.name.last;
+	username.innerText = current.login.username;
+
 }
 
 function printError(error)
