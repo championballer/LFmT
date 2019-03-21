@@ -204,5 +204,37 @@ Examples:
 
 
 function flip(fn, thisArg){
-    
+    let innerArgs = [].slice.call(arguments,2);
+    return function(){
+    	let outerArgs = [].slice.call(arguments);
+    	let allArgs = innerArgs.concat(outerArgs).slice(0,fn.length);
+    	return fn.apply(thisArg,allArgs.reverse());
+    }
 }
+
+function personSubtract(a,b,c){
+        return this.firstName + " subtracts " + (a-b-c);
+    }
+    
+    var person = {
+        firstName: 'Elie'
+    }
+    
+    var flipFn = flip(personSubtract, person);
+ console.log(flipFn(3,2,1)) // "Elie subtracts -4"
+    
+    var flipFn2 = flip(personSubtract, person, 5,6);
+ console.log(flipFn2(7,8)) // "Elie subtracts -4"
+    
+    function subtractFourNumbers(a,b,c,d){
+        return a-b-c-d;
+    }
+
+console.log(flip(subtractFourNumbers,this,1)(2,3,4)) // -2
+console.log(flip(subtractFourNumbers,this,1,2)(3,4)) // -2
+console.log(flip(subtractFourNumbers,this,1,2,3)(4)) // -2
+console.log(flip(subtractFourNumbers,this,1,2,3,4)()) // -2
+console.log(flip(subtractFourNumbers,this)(1,2,3,4)) // -2
+console.log(flip(subtractFourNumbers,this,1,2,3)(4,5,6,7)) // -2
+console.log(flip(subtractFourNumbers,this)(1,2,3,4,5,6,7,8,9,10)) // -2
+console.log(flip(subtractFourNumbers,this,11,12,13,14,15)(1,2,3,4,5,6,7,8,9,10)) // -22
