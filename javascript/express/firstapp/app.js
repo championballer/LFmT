@@ -1,12 +1,13 @@
 const express = require('express');
 app = express();
 
-app.listen(3000,function(){
-	console.log("Server Started");
-})
+app.listen(8000,()=>{
+	console.log("Server started");
+});
 
 app.get('/',function(req,res){
-	res.send("Hi there");
+	res.send("Hi there\n");
+
 })
 
 app.get('/dog',function(req,res){
