@@ -1,6 +1,6 @@
-function greet(val,name,formatter)
+function greet(val,name,formatter,key)
 {
-	console.log("Hello "+formatter(name,val));
+	console.log("Hello "+formatter(name,val,key));
 }
 
 greet(0,"Shiv",(name,val)=>{
@@ -10,6 +10,8 @@ greet(0,"Shiv",(name,val)=>{
 
 function sample(name,val){
 	console.log(val);
+	if(key!==undefined)
+	console.log(key);
 	return name.toUpperCase();
 }
 

@@ -5,3 +5,4 @@ console.log(arr.findIndex((element)=>{
 		return true;
 	else return false;
 }));
+
