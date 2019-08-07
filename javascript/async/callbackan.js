@@ -1,13 +1,13 @@
 function greet(name,formatter)
 {
-	return "Hello "+formatter(name);
+	console.log("Hello "+formatter(name));
 }
 
-console.log(greet("Shiv",(name)=>{
+greet("Shiv",(name)=>{
 	return name.toUpperCase();
-}));
+});
 
-console.log(greet("Agrima",(name)=>{
+greet("Agrima",(name)=>{
 	return name;
-}));
+});
 
